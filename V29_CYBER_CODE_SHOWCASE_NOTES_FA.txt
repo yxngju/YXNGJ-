@@ -1,0 +1,21 @@
+YXNGJ V29 — CYBER CODE SHOWCASE
+
+REQUESTED CHANGE
+- Removed Cyber Lab's connection to the local Python bridge and real Python execution.
+- Kept the editable code-writing area.
+- Added six selectable code-library cards (Python and JavaScript examples).
+- Selecting a card loads the sample into the editor and animates its preview on the computer monitor.
+- Added a jump-to-library control and a back-to-computer control.
+- Console commands are now visual-only: help, list, editor, clear.
+- Save Draft uses this browser's localStorage; Copy Code uses the browser clipboard API.
+- Removed cyber_bridge.py and START_CYBER_LAB.bat because this Cyber Lab no longer needs a local Python server.
+
+SCOPE PRESERVATION
+- No intentional changes to HOME, gallery, game, INFO, entity/character sections, or global navigation.
+- Existing V28 green-skull theme assets and security report retained.
+
+SECURITY / PRIVACY NOTES
+- Cyber Lab JavaScript makes no fetch/XHR/WebSocket requests and contains no Python bridge API calls.
+- Code snippets are not executed. The editor is a text editor and visual preview only.
+- Draft storage remains local to the browser profile; clearing browser site data may remove it.
+- Clipboard copy requires browser permission/support.

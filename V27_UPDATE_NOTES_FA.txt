@@ -1,0 +1,20 @@
+YXNGJ SITE V27 — UPDATE NOTES
+
+1) GAME:
+- Added a bilingual English/Persian player guide to the game portal.
+- Added a compact bilingual quick guide inside the VOID RUNNER start screen.
+- Documented controls and abilities from the current game implementation.
+
+2) INFO:
+- Reworked the creator profile in English and Persian.
+- Describes YXNGJ's focus on cybersecurity, website design, web security and digital projects.
+- Retained the existing Instagram and Telegram destinations.
+
+3) VISUAL:
+- Added restrained 3D depth to cards and panels.
+- Added scroll-reveal motion and a subtle cursor aura on desktop.
+- Added Persian font fallbacks (Vazirmatn / IRANSansX / Tahoma).
+- Honors prefers-reduced-motion and disables cursor effects on touch devices.
+
+No game mechanics, existing page navigation, gallery assets, character assets or Cyber Lab execution code were intentionally changed.
+Fonts are system fallbacks; no external font download is required.

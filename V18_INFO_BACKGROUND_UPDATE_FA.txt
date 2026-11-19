@@ -1,0 +1,9 @@
+yxngj V18 — INFO X-01 HACKER BACKGROUND
+
+- Built on V17; all existing pages and navigation files retained.
+- Added original X-01 mask-inspired cyberpunk artwork as the INFO page background.
+- Compressed artwork to WebP to reduce file size and image decode cost.
+- Added dark overlays to preserve text/card readability.
+- Kept the background static (no continuous video/canvas animation) to avoid adding performance load.
+
+Validation: ZIP integrity checked; HTML/CSS asset references checked. This is not a real-browser or laptop FPS test.

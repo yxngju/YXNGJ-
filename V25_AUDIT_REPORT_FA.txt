@@ -1,0 +1,29 @@
+YXNGJ V25 — REBUILD & AUDIT REPORT
+
+Why V24 was replaced:
+- V24 was assembled from the V22 package instead of preserving V23 as its base.
+- It changed the requested XAI menu label back to CHARACTERS.
+- It replaced the creator introduction and DM contact copy with generic project text.
+- It omitted several files that were present in V23 (including squad image assets and the V23 notes).
+- The V24 archive was 2.27 MB. That smaller size was not evidence of a better build; it was partly caused by missing files.
+
+What V25 does:
+- Rebuilt directly from the complete V23 package so its latest requested content and full file tree are preserved.
+- Keeps the XAI menu label, creator introduction, GAME portal, existing game, Cyber Lab bridge, and all V23 assets.
+- Re-encoded the Cyber Lab and Game Room backgrounds from the original 1672x941 PNG masters at WebP quality 95 for browser use.
+- Includes the original PNG masters in ORIGINAL_ART_MASTERS. These are archival copies and are not loaded by the website.
+
+Checks actually completed:
+- JavaScript syntax: navigation.js, home-gallery.js, entity.js, cyberlab.js, game-room.js.
+- Python compile: cyber_bridge.py, workspace/main.py, workspace/notes.py.
+- HTML parser: index.html, games/index.html, game/index.html.
+- Local references in HTML, CSS and JS: no missing local file references found.
+- Required site/game/Cyber Lab files: present.
+- Raster images: all 26 image files decoded successfully.
+- ZIP integrity: tested after packaging.
+
+Important limitations:
+- Browser-based interaction tests could not run in this environment: Chromium navigation was blocked by the execution environment (ERR_BLOCKED_BY_ADMINISTRATOR).
+- Therefore no claim is made that clicking, mobile layout, Python bridge runtime, or real laptop performance has been fully verified.
+- The Python bridge must be launched with START_CYBER_LAB.bat; opening index.html directly does not start it.
+- This audit is a set of automated checks by one assistant, not three independent human expert reviews.

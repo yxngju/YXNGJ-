@@ -1,0 +1,31 @@
+yxngj SITE V13 — PERFORMANCE + CYBER LAB AUDIT
+
+What was found in V12:
+- The X-01 canvas animation continued running while the Characters page was hidden. It redraws hundreds of particles and connecting lines every frame, which can consume CPU/GPU and cause stutter on integrated graphics.
+- The teleport transition used full-screen clip-path and blur animation, which is expensive on some integrated GPUs.
+- Cyber Lab's Python runner attempted to continue after a save error because the save function swallowed its failure.
+- The local Python bridge allowed wildcard CORS origins even though it can execute Python code. This was too permissive for a local execution service.
+- V12 did not upscale or replace any artwork. Its main background images were the same pixel dimensions and bytes as V11; therefore the image quality did not actually increase.
+
+V13 changes:
+- Pause the X-01 canvas animation whenever the Characters page is off-screen or the browser tab is hidden; resume only when visible.
+- Reduce particle count and throttle status DOM updates to five times per second.
+- Replace expensive full-screen clip-path/blur transition with opacity/scale animation while keeping the portal rings.
+- Make Cyber Lab stop and show a clear error if saving fails before running Python.
+- Restrict local bridge CORS to the local yxngj origin; reject foreign origins.
+- Preserve all original artwork assets without pretending they were upscaled.
+
+Checks performed:
+- node --check on all site JavaScript files.
+- python -m py_compile cyber_bridge.py.
+- Live local API checks: health, read-file, run-python (6*7 returned 42), and foreign-origin rejection (403).
+- ZIP integrity check.
+
+Not performed:
+- Full interactive testing on the user's laptop or a complete automated browser interaction test. A headless Chromium page-dump attempt timed out in this environment.
+
+Cyber Lab startup:
+- Extract the ZIP.
+- Run START_CYBER_LAB.bat and keep the console open.
+- Use the URL opened by the launcher: http://127.0.0.1:8765/
+- Do not open index.html by double-clicking if you want the local Python bridge to work.

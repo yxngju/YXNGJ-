@@ -1,0 +1,55 @@
+YXNGJ V28 — SECURITY AUDIT & VISUAL UPDATE
+Date: 2026-11-19
+Scope: V27 archive static review; Cyber Lab local bridge and browser code; targeted Cyber Lab + Info styling only.
+
+VISUAL CHANGES
+- Added cyber-skull-green.webp from the supplied reference image.
+- Applied the supplied green/black identity to Cyber Lab and Info only.
+- Kept all other page content, navigation, game, gallery, character assets and effects unchanged.
+
+SECURITY REVIEW — FINDINGS
+1. Local bridge exposure: GOOD BASELINE, HARDENED
+   - Server binds to 127.0.0.1:8765 (loopback only).
+   - POST requests now require the exact local Origin, exact Host and loopback client address.
+   - JSON content type and object-shaped request bodies are required.
+   - Request body and Python source sizes are capped.
+   - No permissive CORS response is configured.
+2. File access: RESTRICTED
+   - Only main.py and notes.py are accepted; resolved parent directory is checked.
+   - File content is bounded to 20 KB.
+3. Python runner: PARTIALLY RESTRICTED — NOT A SECURITY SANDBOX
+   - AST allow-list, restricted builtins, math-only import, 4-second subprocess timeout,
+     isolated mode (-I), no site initialization (-S), temporary working directory and
+     bounded captured output are present.
+   - Important residual risk: no enforceable memory limit / OS sandbox is configured.
+     Adversarial expressions may cause high memory use before the timeout, and Python
+     language-level restrictions are not a substitute for process/VM isolation.
+   - Do not run code from strangers or treat this as safe for hostile multi-user access.
+4. VS Code launch: HARDENED
+   - Removed shell=True execution of a PATH-resolved .cmd file.
+   - Only a directly executable `code` command is launched with an argument list.
+   - On systems where only code.cmd is available, the button may report unavailable;
+     this is an intentional security/usability trade-off.
+5. Browser UI review
+   - Cyber Lab uses textContent for user-facing command output and editor results.
+   - Line-number HTML is generated from line count, not user-supplied source text.
+   - Existing external Instagram/Telegram links use noopener/noreferrer.
+   - Game overlay uses fixed internal strings and numeric score values in its HTML updates.
+
+REMAINING RECOMMENDATIONS
+- For genuinely untrusted code execution, move execution into a disposable VM/container or
+  a dedicated low-privilege OS account with OS-enforced memory, CPU, filesystem and network
+  restrictions. Do not expose the bridge beyond loopback.
+- Consider adding a per-run concurrency limit and request throttling before enabling wider use.
+- Serve the public website over HTTPS when deployed; this local bridge is HTTP loopback only.
+
+TESTS PERFORMED
+- Python syntax compilation: PASS (all Python files in archive).
+- JavaScript syntax check: PASS (6 JavaScript files; Node.js available).
+- HTML local-reference/path checks: PASS (all checked local references exist; no paths escape site root).
+- ZIP integrity check: PASS (verified after packaging).
+- Runtime penetration testing against Windows/browser deployment: NOT PERFORMED; static/local checks only.
+
+LIMITATIONS
+This is a static code review and local validation, not a live penetration test against a deployed
+server. No external host, production deployment, browser session or Windows runtime was available.

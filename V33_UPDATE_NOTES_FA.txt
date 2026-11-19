@@ -1,0 +1,14 @@
+YXNGJU V33 — EDITORIAL HOME / FLOATING ANIME ARCHIVE
+
+- Desktop navigation restyled as a clean horizontal editorial menu inspired by the supplied portfolio reference; mobile navigation remains a compact menu.
+- Preserved the existing YXNGJU hero artwork and original nine gallery artworks.
+- Added four supplied anime illustrations as local optimized transparent WebP assets.
+- Removed the white image backgrounds where they were connected to the artwork's outer background; removed/cropped screenshot UI overlays.
+- Replaced the boxed gallery grid with a horizontal, auto-drifting visual archive. Artwork floats directly in the site's dark ambient world without white cards or solid image panels.
+- Added previous/next controls, scroll snapping, click-to-expand lightbox, keyboard navigation, pause-on-hover/focus, and reduced-motion support.
+- All new art is hosted locally in the ZIP; no external image URLs were introduced.
+
+QA:
+- ZIP integrity checked.
+- JavaScript syntax check and HTML local-reference checks are run before packaging.
+- No live Chrome/Safari/iOS browser session was available; verify on GitHub Pages before replacing the live site.

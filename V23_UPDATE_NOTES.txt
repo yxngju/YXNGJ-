@@ -1,0 +1,16 @@
+YXNGJ V23 — CONTENT & GAME PORTAL UPDATE
+
+Implemented:
+- HOME now introduces the creator in English: cybersecurity, website design/security, and coding.
+- Added a Coming Soon project feature for the planned desktop/mobile AI assistant. Capabilities are described as goals under development, not currently available features.
+- Renamed the former CHARACTERS navigation item to XAI and added a clear description of the planned 3D conversational AI character.
+- Moved GAME out of the main portfolio navigation flow into a separate games/index.html portal.
+- The new game portal currently links to the existing game at ../game/index.html and includes reserved cards for future titles.
+- INFO now invites visitors to DM for more information.
+- Removed the embedded Game Room section from the main portfolio to keep the main site lighter.
+
+Validation:
+- JavaScript syntax checks passed for navigation.js, home-gallery.js, entity.js, cyberlab.js.
+- Python bridge passed py_compile.
+- Local references in index.html and games/index.html checked.
+- Browser interaction/performance test was not completed in a real browser. Please test locally before publishing.

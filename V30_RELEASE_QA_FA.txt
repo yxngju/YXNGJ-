@@ -1,0 +1,40 @@
+YXNGJ V30 — GAMEPLAY, SEO & RELEASE QA
+Date: 2026-11-19
+Base: V29 Cyber Code Showcase ZIP
+
+CHANGES
+1. VOID RUNNER gameplay tuning:
+   - Increased enemy hull durability and movement speed.
+   - Increased group size and spawn pressure, with pressure rising by fleet level.
+   - Shortened enemy firing intervals progressively.
+   - Reduced ship movement speed slightly to make dodging meaningful.
+   - Shield changed from 60 seconds to 4.5 seconds, with a 22-second cooldown.
+   - Repair is now limited to 3 uses per run and restores 28 hull.
+   - Added P to pause/resume; game auto-pauses when the tab loses focus.
+   - Added clearer pause indicator, button focus/hover feedback and improved start/game-over panel treatment.
+2. Review board:
+   - Added ten distinct simulated expert-style review personas with expandable comments.
+   - Added an 8.3/10 simulated game verdict and 8.2/10 simulated whole-site verdict.
+   - The panel explicitly states these are simulated evaluations, not real human or external AI reviews.
+3. SEO:
+   - Added page title, description, canonical, robots and social preview metadata.
+   - Added robots.txt and sitemap.xml for the known GitHub Pages URL:
+     https://yxngju.github.io/yxngju-site/
+   - Added metadata to the game portal.
+4. No backend, account system, remote score service or external review API was added.
+
+VALIDATION
+- JavaScript standalone syntax: PASS.
+- Inline game JavaScript syntax: PASS.
+- HTML local asset references: PASS.
+- Python syntax for packaged Python files: PASS.
+- ZIP integrity: to be checked after packaging.
+- Browser playtest (Chrome/Safari/iOS): NOT RUN in this environment.
+- GitHub Pages live crawl/index status: NOT VERIFIED.
+- Difficulty values are a first tuning pass; human playtesting is needed to confirm the game is fair, not merely harder.
+
+IMPORTANT NOTES
+- Ten reviewer entries are transparent simulated personas; they are not ten autonomous bots and no AI API was contacted.
+- Scores are editorial estimates based on source inspection, not measured user ratings.
+- Google indexing is not guaranteed by sitemap or metadata. Submit the sitemap in Google Search Console after the V30 files are published.
+- Before publishing, confirm the canonical GitHub Pages URL and repository path are exactly correct.

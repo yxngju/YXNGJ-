@@ -1,0 +1,13 @@
+YXNGJU V34 — THE CREW HIDEOUT
+
+GAME PORTAL REDESIGN
+- Rebuilt /games/ as an immersive YXNGJU crew hideout rather than a plain arcade landing page.
+- Added an original wide anime camp scene: four crew members relaxing around a campfire in a ruined neon world, with animal companions, swords and gear visible.
+- Added a responsive roster of nine site characters/entities, with clickable personnel-file modals.
+- Kept the existing VOID RUNNER launch path, player guide, and simulated review board content.
+- Added subtle ambient background movement and reduced-motion support.
+- The smoking character is a fictional adult-styled anime character in a non-graphic, atmospheric scene.
+
+QA / LIMITATIONS
+- HTML and JS are static source updates; no live browser playtest was available.
+- Verify the page on GitHub Pages before replacing the live build.

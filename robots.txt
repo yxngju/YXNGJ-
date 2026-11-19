@@ -1,0 +1,1 @@
+User-agent: *\nAllow: /\nSitemap: https://yxngju.github.io/yxngju-site/sitemap.xml\n

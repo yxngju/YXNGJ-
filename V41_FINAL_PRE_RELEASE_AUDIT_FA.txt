@@ -1,0 +1,74 @@
+YXNGJ V41 — FINAL PRE-RELEASE AUDIT
+===================================
+Scope: Uploaded YXNGJ_SITE_V41_HOME_ARTWORK_BUTTONS ZIP
+Audit type: Static source review + automated integrity/syntax/reference checks
+Date: 2026-11-19
+
+RESULT
+------
+CONDITIONAL PASS — no blocking defect was found in the static checks completed.
+One small consistency issue was fixed in this audited copy:
+- The game HUD initially displayed 3 lives while reset() starts a run with 2.
+- The initial HUD value is now 2, matching the actual game start state.
+No other gameplay, menu artwork, HOME artwork, character, Cyber Lab, navigation,
+or visual-effect content was intentionally changed.
+
+CHECKS PASSED
+-------------
+- ZIP integrity: passed; no corrupt member detected.
+- Archive contents: 97 entries before the one-line consistency fix.
+- JavaScript syntax: all 7 external .js files passed Node.js --check.
+- Inline JavaScript in game/index.html: passed Node.js --check.
+- Python syntax: workspace/main.py and workspace/notes.py passed py_compile.
+- HTML local references: no missing local image/script/stylesheet/iframe references found.
+- CSS url(...) references: no missing local assets found.
+- In-page anchor references: no broken local #anchors found.
+- Duplicate HTML IDs: none found in the 3 HTML documents.
+- Referenced images: local image references resolved by static path checks.
+- HOME artwork: V41 includes the seven new HOME artwork assets and the 4 window/hero
+  visual assets; source notes indicate the HOME gallery uses the user-provided artwork.
+- Game menu: game/index.html still contains its original start overlay, HUD, controls,
+  instructions, and game navigation. The crew camp asset remains in game-world/crew-camp.webp
+  and the Games portal references ../game-world/crew-camp.webp.
+- Player ship: game/player_ship_coelinho.png remains the configured player sprite.
+- SEO files: robots.txt and sitemap.xml exist and point to
+  https://yxngju.github.io/yxngju-site/ .
+
+SECURITY / SOURCE REVIEW
+------------------------
+- No eval(), new Function(), document.write(), fetch(), XMLHttpRequest, WebSocket,
+  or postMessage usage was found in the inspected JS sources.
+- localStorage is used for the Cyber Lab draft. Do not save passwords, API keys,
+  tokens, or other secrets in that editor.
+- innerHTML is used for fixed decorative markup and clearing the terminal, and for
+  game-over text assembled from game score/state. No direct untrusted-input-to-innerHTML
+  flow was established in this static review.
+- The package is a static GitHub Pages site; there is no server-side authentication,
+  database, or private API protection in this ZIP.
+- Host-level HTTP security headers, GitHub Pages deployment configuration, DNS,
+  live TLS behavior, repository permissions, and actual Google indexing cannot be
+  proven from the archive alone.
+
+NOT RUN / RELEASE LIMITATIONS
+-----------------------------
+- A live browser run could not be completed in this audit environment because the
+  local Chromium navigation was blocked by the environment (ERR_BLOCKED_BY_ADMINISTRATOR).
+- Therefore Chrome/Safari/iOS real-browser behavior, touch controls, gameplay balance,
+  animation smoothness, and visual layout on physical devices remain unverified here.
+- No live GitHub Pages crawl, external link check, Lighthouse run, or Google Search
+  Console verification was performed.
+- The ten reviewer personas / scores previously included in earlier versions are
+  simulated editorial personas, not independent human testers or autonomous AI agents.
+
+RELEASE RECOMMENDATION
+----------------------
+You can proceed to a controlled GitHub Pages deployment after downloading this
+audited ZIP, testing it locally on your Windows laptop and phone, and confirming
+that the repository path is yxngju/yxngju-site (matching the canonical URL).
+Keep the previous V41 ZIP as rollback backup. After publishing, check:
+1) HOME gallery and all 4 rotating visual windows.
+2) Game portal crew-camp image and ENTER/LAUNCH links.
+3) Game menu, player ship sprite, 2 starting lives, pause, touch controls, game-over/restart.
+4) Cyber Lab editor/terminal and draft persistence.
+5) Character page, navigation, Japanese neon title, LED rails and pointer glow.
+6) GitHub Pages HTTPS and the live sitemap URL.

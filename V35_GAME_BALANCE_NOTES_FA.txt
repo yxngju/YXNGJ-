@@ -1,0 +1,10 @@
+YXNGJU V35 — ENEMY FLEET PROGRESSION
+
+- Player hull reduced to 68; player ship sprite scaled down.
+- Lives reduced to 2; respawn invulnerability reduced to 2.4 seconds.
+- Enemy collision and projectile damage increased.
+- Repair cells are rare (2.5% drop chance).
+- Ten enemy ships cropped from the user-provided pixel-art reference are used as enemy sprites.
+- Ten ordered stages: one enemy ship class per stage, three enemies active at once, 12 kills required per stage. Enemy HP and speed scale up each stage.
+- Victory screen appears only after all ten stages are cleared.
+- Browser/device playtesting not performed; test on GitHub Pages before replacing the live site.

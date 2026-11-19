@@ -1,0 +1,17 @@
+yxngj SITE V11 — GAME MENU + PAGE NAVIGATION FIX
+
+Changes:
+- Replaced the visible baked-in left game menu with a darkened side rail and real PLAY / HOME controls.
+- PLAY opens the existing VOID RUNNER game iframe.
+- HOME returns to the main HOME page from the Game Room and from the running game.
+- Reworked mouse-wheel navigation so normal page gestures switch between sections, while designated inner editors/terminals/galleries keep their own scrolling.
+- Reworked touch-swipe navigation with the same inner-control protections.
+- Kept the existing artwork, gallery, character room, Cyber Lab, and game files.
+
+Checks performed:
+- node --check on all site JavaScript files.
+- python -m py_compile on cyber_bridge.py.
+- unzip -t on the generated archive.
+
+Not performed:
+- Full interactive browser testing on the user's laptop. Please test locally after extracting the archive.

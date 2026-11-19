@@ -1,0 +1,14 @@
+YXNGJU V37 — LIVING IDENTITY / SYNTH-INSPIRED HOME
+
+- Homepage visual direction changed to a minimal dark graphite/black fashion-editorial interface with vivid neon red accents, inspired by the supplied reference.
+- Hero now focuses on the original X-01 character only. Existing X-01 artwork angles are reused: front, profile, three-quarter and rear.
+- Added four live character windows; images automatically rotate between X-01 poses.
+- Hero character gently changes pose automatically. Desktop pointer movement adds restrained parallax to the hero and tilts the active image window.
+- Gallery remains an automatically drifting image archive.
+- Footer motto changed to Japanese 「諦めない」, meaning “Never give up”, with a pulsing neon glow.
+- Other site sections, navigation, Cyber Lab, GAME portal and game files are preserved from V36.
+- Respects prefers-reduced-motion by disabling automatic motion effects.
+
+QA
+- Static JavaScript syntax check and ZIP integrity check performed.
+- No live Chrome/Safari/iOS visual test was performed.

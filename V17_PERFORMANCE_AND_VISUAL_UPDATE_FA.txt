@@ -1,0 +1,24 @@
+yxngj V17 — CONTINUOUS WORLD + PERFORMANCE UPDATE
+
+Visual update:
+- Replaced the flat grey-feeling Character Room backdrop with a layered editorial environment: subtle architectural grid, oversized archive typography, and low-opacity X-01 reference fragments using existing local images.
+- Preserved the page layout, all seven sections, menu navigation, gallery, and Cyber Lab.
+- Background is CSS-based and does not add video, WebGL, or external assets.
+
+Performance update:
+- Reduced X-01 canvas particle count substantially (low-power: 92 body points + 18 edge points; stronger devices: capped at 170 + 32).
+- Capped canvas device pixel ratio at 1.0 on low-power/mobile and 1.15 elsewhere.
+- Capped hologram painting to approximately 24fps.
+- Removed particle connection calculations on low-power devices and reduced them on stronger devices.
+- Reduced the number of flowing canvas strands and UI text updates.
+- Removed continuously animated hue/filter effects and large blurred aura from X-01 character layer.
+- Kept canvas visibility lifecycle and page/tab visibility pause behavior.
+
+Validation performed:
+- JavaScript syntax checks (node --check).
+- Python bridge compile check (py_compile).
+- ZIP integrity check.
+
+Not claimed:
+- No real laptop FPS benchmark or physical-device test has been performed.
+- These changes target known high-cost effects; actual remaining stutter must be confirmed on the user's laptop.

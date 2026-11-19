@@ -1,0 +1,13 @@
+YXNGJU V38 — SYNTH HOME / EXISTING SITE ARTWORK
+
+- Hero image of X-01 remains in the top section, with the existing four X-01 pose assets.
+- The four editorial windows below now use only images already included in the site's home-art archive.
+- Removed X-01 pose images from the four windows; each window begins with a different archive image.
+- Each window automatically cycles through the site's existing 13 artworks, with independent timing and offsets.
+- Existing homepage gallery and other site sections are retained.
+- No Pinterest/reference screenshot assets or new external images were added.
+
+QA
+- Checked that all 13 archive image files exist in the package.
+- JavaScript syntax and ZIP integrity checks performed.
+- No live Chrome/Safari/iOS visual test performed.
