@@ -3,9 +3,13 @@
   const nav=document.querySelector('.side-menu'), toggle=document.querySelector('.menu-toggle'), backdrop=document.querySelector('.menu-backdrop');
   const links=[...document.querySelectorAll('.side-menu a[href^="#"]')], pages=[...document.querySelectorAll('main .page[id]')];
   if(!nav||!toggle||!backdrop||!links.length||!pages.length)return;
-  const ids=pages.map(p=>p.id); let current='home', locked=false, wheelTimer=null, touchY=0, touchX=0, touchTarget=null;
+  const ids=pages.map(p=>p.id); let current='home', locked=false;
   const overlay=document.createElement('div'); overlay.className='yx-teleport'; overlay.setAttribute('aria-hidden','true');
-  overlay.innerHTML='<div class="yx-teleport-ring ring-one"></div><div class="yx-teleport-ring ring-two"></div><div class="yx-teleport-core"></div><div class="yx-teleport-label">JUMPING THROUGH THE yxngj UNIVERSE</div>';
+  const ringOne=document.createElement('div'); ringOne.className='yx-teleport-ring ring-one';
+  const ringTwo=document.createElement('div'); ringTwo.className='yx-teleport-ring ring-two';
+  const core=document.createElement('div'); core.className='yx-teleport-core';
+  const label=document.createElement('div'); label.className='yx-teleport-label'; label.textContent='JUMPING THROUGH THE yxngj UNIVERSE';
+  overlay.append(ringOne,ringTwo,core,label);
   document.body.appendChild(overlay);
   function closeMenu(){nav.classList.remove('menu-open');backdrop.classList.remove('show');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');toggle.textContent='☰';document.body.classList.remove('nav-locked');}
   function commitPage(id,{history=false}={}){
@@ -21,26 +25,27 @@
     window.setTimeout(()=>{overlay.classList.remove('teleport-in');overlay.classList.add('teleport-out');},570);
     window.setTimeout(()=>{overlay.classList.remove('teleport-out');document.body.classList.remove('teleporting');locked=false;},1050);
   }
-  const go=d=>{const i=ids.indexOf(current),n=Math.max(0,Math.min(ids.length-1,i+d));if(n!==i)showPage(ids[n],{history:true});};
-  const isBlocked=t=>t instanceof Element&&!!t.closest('input,textarea,select,button,[contenteditable="true"],iframe,.gallery-lightbox,.cyber-code-wrap,.cyber-terminal-output,.entity-view-gallery,.holo-gallery,.cyber-explorer');
-  const pageCanScroll=(page,dir)=>page&&(dir>0?page.scrollTop+page.clientHeight<page.scrollHeight-4:page.scrollTop>4);
-  const innerScroller=t=>t instanceof Element?t.closest('.cyber-terminal-output,.cyber-code-input,.cyber-editor-result,.cyber-explorer,[data-native-scroll]'):null;
-  const innerCanScroll=(el,dir)=>el&&el.scrollHeight>el.clientHeight+3&&(dir>0?el.scrollTop+el.clientHeight<el.scrollHeight-3:el.scrollTop>3);
   links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.hash.slice(1),{history:true});}));
   document.querySelectorAll('[data-page-link]').forEach(a=>a.addEventListener('click',e=>{const id=a.dataset.pageLink;if(ids.includes(id)){e.preventDefault();showPage(id,{history:true});}}));
   document.querySelector('.logo')?.addEventListener('click',e=>{e.preventDefault();showPage('home',{history:true});});
   toggle.addEventListener('click',()=>{const open=!nav.classList.contains('menu-open');nav.classList.toggle('menu-open',open);backdrop.classList.toggle('show',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');toggle.textContent=open?'×':'☰';document.body.classList.toggle('nav-locked',open);});
+  // Keep wheel gestures inside the navigation drawer; do not change pages on scroll.
+  nav.addEventListener('wheel',e=>{
+    if(nav.scrollHeight>nav.clientHeight){
+      const canDown=nav.scrollTop+nav.clientHeight<nav.scrollHeight-1;
+      const canUp=nav.scrollTop>0;
+      if((e.deltaY>0&&canDown)||(e.deltaY<0&&canUp)) e.stopPropagation();
+    }
+  },{passive:true});
+  nav.addEventListener('keydown',e=>{
+    if(e.key==='ArrowDown'){e.preventDefault();nav.scrollBy({top:60,behavior:'smooth'});}
+    if(e.key==='ArrowUp'){e.preventDefault();nav.scrollBy({top:-60,behavior:'smooth'});}
+    if(e.key==='Home'){e.preventDefault();nav.scrollTo({top:0,behavior:'smooth'});}
+    if(e.key==='End'){e.preventDefault();nav.scrollTo({top:nav.scrollHeight,behavior:'smooth'});}
+  });
   backdrop.addEventListener('click',closeMenu);
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
-  // Page navigation is menu-only. Wheel and touch scrolling are reserved for
-  // content inside the currently open page (terminal, editor, galleries, etc.).
-  // No global wheel/touch gesture can switch sections or trigger teleport.
-  document.addEventListener('wheel', e => {
-    if (locked) e.stopPropagation();
-  }, {capture:true, passive:true});
-  document.addEventListener('touchend', e => {
-    if (locked) e.stopPropagation();
-  }, {capture:true, passive:true});
+  // Natural page scrolling is preserved. Navigation between sections is menu-driven.
   window.addEventListener('popstate',()=>showPage(location.hash.slice(1)||'home'));
   window.addEventListener('hashchange',()=>{const id=location.hash.slice(1)||'home';if(id!==current)showPage(id);});
   window.addEventListener('resize',()=>{if(innerWidth>760)closeMenu();});

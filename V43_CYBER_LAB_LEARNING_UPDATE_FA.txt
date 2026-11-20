@@ -1,0 +1,8 @@
+YXNGJU V43 — CYBER LAB LEARNING UPDATE
+
+- Added Persian explanations for each sample: purpose, practical use, local run command, and safety note.
+- Expanded the library from 6 to 10 examples.
+- Added real-file SHA-256 calculation, secure password generation using Python secrets, TCP port checks limited to 127.0.0.1, and an HTTPS security-header review for authorized sites.
+- Improved the password-strength example so it asks for a test password at runtime instead of embedding a sample password.
+- Clarified that Base64 is encoding, not encryption.
+- The site still does not execute code; examples are displayed for copying and local use.

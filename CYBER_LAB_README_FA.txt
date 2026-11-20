@@ -1,13 +1,12 @@
-YXNGJ CYBER LAB — OFFLINE CODE SHOWCASE
+YXNGJ CYBER LAB — OFFLINE CODE SHOWCASE / LEARNING LIBRARY
 
-Cyber Lab now runs entirely in the browser.
-- There is no Python bridge or local Python execution.
-- There is no connection to the computer's filesystem or VS Code.
-- The code editor remains editable.
-- SAVE DRAFT stores the current draft in this browser's local storage only.
-- COPY CODE copies the editor contents when browser clipboard permission is available.
-- The Code Library contains six sample snippets. Selecting a card loads its code into the editor and previews a typing effect on the computer monitor.
-- The console accepts only visual demo commands: help, list, editor and clear.
-- Code samples are displayed, not executed.
+Cyber Lab runs in the browser as a code editor and learning showcase. It does NOT execute the snippets.
+- 10 selectable examples: Python basics, SHA-256, password checks, ports, JavaScript DOM, Base64, real file hashing, secure password generation, localhost-only port checks, and website security-header review.
+- Selecting a card loads the code and a Persian guide describing its purpose, practical use, run command, and safety note.
+- Python snippets are real examples intended to be copied and run locally with Python; browser preview is not execution.
+- The localhost port example connects only to 127.0.0.1. The HTTP header example should only be used on sites the learner owns or is authorized to review.
+- Save Draft uses this browser profile's localStorage. Copy Code uses the browser clipboard when permitted.
+- Console commands remain visual-only: help, list, editor, clear.
+- No Python bridge, filesystem bridge, or local execution server is connected to the website.
 
-Open index.html in a modern browser. No START_CYBER_LAB.bat file or Python installation is needed for Cyber Lab.
+Do not enter real passwords, API keys, tokens, or secrets in the browser editor.

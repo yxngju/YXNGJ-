@@ -1,0 +1,68 @@
+YXNGJU V45 — PERFORMANCE UPDATE & IMPLEMENTATION REPORT
+========================================================
+Base: YXNGJU_SITE_V44_CYBER_LAB_UPGRADE (uploaded archive)
+Scope: Static website assets, navigation/scroll behavior, image loading and source validation.
+
+IMPLEMENTED IN THIS PACKAGE
+---------------------------
+1. Raster asset conversion:
+   - Converted 18 deployed PNG/JPEG assets to WebP, including character views, character art,
+     game background, player sprite and 10 enemy sprites.
+   - Converted assets total: 1,268,443 bytes before; 461,524 bytes after.
+   - Aggregate reduction for these 18 assets: approximately 63.6%.
+   - Original archival masters and the supplied reference image were not converted or deleted.
+2. Image loading:
+   - Added native loading="lazy" and decoding="async" to non-hero images in the main site.
+   - Preserved high fetch priority for the main HOME hero character.
+   - Added lazy loading and async decoding to the Games portal crew images.
+3. HOME scrolling:
+   - Removed wheel/touch gestures that automatically switched sections when reaching scroll boundaries.
+   - HOME can now scroll naturally; section changes are menu/link driven.
+   - Changed the HOME section overflow so its lower content is not clipped by the section itself.
+4. Rendering:
+   - Added content-visibility:auto to lower HOME visual sections to defer off-screen rendering.
+5. Existing architecture retained:
+   - The site remains static and uses separate deferred JavaScript files.
+   - No external API request implementation was found in the inspected HTML/JS sources.
+   - The main document's CSP still sets connect-src 'none'.
+
+VALIDATION ACTUALLY PERFORMED
+-----------------------------
+- ZIP input integrity was checked before extraction.
+- Node.js syntax checks passed for external JavaScript files.
+- Inline game JavaScript extracted from game/index.html passed node --check.
+- Python compile checks passed for workspace/main.py and workspace/notes.py.
+- HTML local references checked for index.html, games/index.html and game/index.html: no missing references.
+- CSS url(...) local references: no missing assets.
+- All 53 WebP images decoded successfully.
+- Dynamically generated enemy sprite paths (0–9) were checked and exist.
+- Duplicate HTML IDs: none found in the three HTML documents.
+
+NOT IMPLEMENTED — REQUIRES BACKEND / HOSTING CONTROL
+---------------------------------------------------
+These features cannot be truthfully activated by editing this GitHub Pages static archive alone:
+- API debouncing, request deduplication, result pagination and parallel independent API calls:
+  no API/search/autocomplete client exists in this source package.
+- CDN origin configuration and server-side Gzip/Brotli response compression:
+  GitHub Pages hosting headers/CDN configuration are not controlled by this repository.
+- Background job queue, Redis cache, database indexes, N+1 query fixes and database connection pooling:
+  no application backend or database exists in this package.
+- OpenTelemetry backend tracing, multi-instance traffic balancing and server/database co-location:
+  require deployable server infrastructure and telemetry configuration.
+- Server-side rendering/build-time data generation: the current site is already static HTML; there is
+  no server-rendered application or data source to pre-render.
+- Self-hosted font weights: no font binaries were supplied in this archive. Existing font-family
+  declarations rely on system/fallback fonts.
+
+NOT TESTED
+----------
+- No real user analytics/real-user monitoring was available or enabled.
+- No physical iPhone/Android/Windows browser session or throttled mobile-network test was run.
+- No production Lighthouse/WebPageTest measurement, live GitHub Pages crawl, CDN header test,
+  server benchmark, Redis/queue/database benchmark or OpenTelemetry trace was run.
+- Therefore no claim is made about real-world Core Web Vitals or backend performance.
+
+DEPLOYMENT NOTE
+---------------
+This package is a static-site performance update, not a backend infrastructure release.
+Keep the previous archive as rollback. Test the new package on desktop and phone before publishing.

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090610">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+<meta name="description" content="Meet the YXNGJ crew at their anime-inspired hideout, explore the roster and enter VOID RUNNER.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://yxngju.github.io/yxngju-site/games/"><title>YXNGJ CREW — The Hideout</title>
+<style>
+:root{color-scheme:dark;--pink:#f08cff;--cyan:#8df7ff;--line:rgba(218,160,255,.35)}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#38204e 0,#120c1d 42%,#07060b 100%);color:#f7efff;font-family:Arial,Helvetica,sans-serif}
+main{width:min(1180px,92vw);margin:auto;padding:30px 0 60px}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:12px 0 20px;letter-spacing:.18em;font-size:11px}.top a{color:var(--cyan);text-decoration:none}
+.hero{padding:12vh 0 7vh;max-width:760px}.eyebrow{color:var(--cyan);letter-spacing:.25em;font-size:10px}.hero h1{font-size:clamp(48px,10vw,112px);line-height:.85;letter-spacing:-.06em;margin:22px 0}.hero h1 span{color:var(--pink);text-shadow:0 0 25px #b74dff}.hero p{color:#c9bdd6;line-height:1.8;max-width:560px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(45,26,61,.8),rgba(12,10,19,.92));padding:22px;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}.card small{color:var(--cyan);letter-spacing:.18em}.card h2{font-size:23px;margin:20px 0 8px}.card p{font-size:12px;line-height:1.7;color:#bfb2ca}.card a{display:inline-block;color:#fff;text-decoration:none;border:1px solid var(--pink);padding:11px 15px;font-size:10px;letter-spacing:.16em;width:max-content}.card a:hover{background:var(--pink);color:#160d20;box-shadow:0 0 20px #b74dff}.soon{opacity:.72}.foot{margin-top:42px;color:#82758e;font-size:10px;letter-spacing:.15em}
+ 
+.top a{border:1px solid rgba(141,247,255,.5);padding:10px 14px;box-shadow:0 0 12px rgba(141,247,255,.12)}
+.top a:hover{background:rgba(141,247,255,.12);box-shadow:0 0 20px rgba(141,247,255,.3)}
+
+.guide{margin:58px 0 10px;padding:28px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(35,20,49,.8),rgba(9,8,15,.86));box-shadow:0 22px 55px rgba(0,0,0,.25);border-radius:18px;transform-style:preserve-3d}
+.guide h2{font-size:clamp(26px,4vw,42px);margin:14px 0 22px}.guide h2 span{color:var(--pink);text-shadow:0 0 20px #b74dff}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}
+.guide-card{padding:18px;border:1px solid rgba(218,160,255,.22);background:linear-gradient(145deg,rgba(48,31,63,.65),rgba(12,10,19,.88));border-radius:12px;box-shadow:0 12px 25px rgba(0,0,0,.22);transition:transform .25s,border-color .25s,box-shadow .25s}
+.guide-card:hover{transform:translateY(-5px) rotateX(2deg);border-color:var(--cyan);box-shadow:0 16px 32px rgba(0,0,0,.35),0 0 20px rgba(141,247,255,.09)}
+.guide-card b{font-size:11px;letter-spacing:.1em;color:var(--cyan)}.guide-card p{font-size:12px;line-height:1.8;color:#c9bdd6}
+.guide-card [lang=fa],.guide-note{font-family:Vazirmatn,"IRANSansX",Tahoma,sans-serif;line-height:2}
+.guide-note{color:var(--cyan);font-size:12px;margin:20px 0 0}
+@media(max-width:600px){.guide{padding:18px;margin-top:36px}.guide-card{padding:15px}}
+@media(prefers-reduced-motion:reduce){.guide-card{transition:none}.guide-card:hover{transform:none}}
+
+/* V34 — THE CREW HIDEOUT */
+:root{--acid:#9dff76;--violet:#b88bff;--hot:#ff547e}
+body{background:#07070c;color:#f5f2fa;font-family:Arial,Helvetica,sans-serif}
+main{width:min(1440px,94vw);padding-top:16px}
+.top{position:relative;z-index:5;border-bottom-color:#ffffff20;color:#ddd}
+.top strong{letter-spacing:.24em;color:#fff}
+.top a{color:var(--acid);border-color:#9dff7655}
+.camp-hero{position:relative;isolation:isolate;min-height:min(780px,78vw);height:clamp(600px,72vw,820px);margin:20px 0 70px;overflow:hidden;border:1px solid #ffffff18;background:#08070d;border-radius:4px}
+.camp-art,.camp-vignette{position:absolute;inset:0}
+.camp-art{z-index:-2;background-image:url('../game-world/crew-camp.webp');background-size:cover;background-position:center 47%;transform:scale(1.015);animation:campBreath 18s ease-in-out infinite alternate}
+.camp-vignette{z-index:-1;background:linear-gradient(90deg,rgba(5,5,10,.88) 0%,rgba(5,5,10,.62) 34%,rgba(5,5,10,.08) 72%),linear-gradient(0deg,#07070c 0%,transparent 28%,rgba(0,0,0,.2) 100%)}
+.camp-topline,.camp-caption{position:absolute;left:26px;right:26px;display:flex;justify-content:space-between;color:#c5c2d0;font:9px monospace;letter-spacing:.2em}
+.camp-topline{top:24px}.camp-caption{bottom:22px;color:#b8b1c6}
+.camp-copy{position:absolute;left:clamp(24px,6vw,86px);top:50%;transform:translateY(-45%);max-width:500px}
+.eyebrow{color:var(--acid);font:10px monospace;letter-spacing:.24em}
+.camp-copy h1{font-size:clamp(64px,10vw,136px);line-height:.82;letter-spacing:-.08em;margin:25px 0;text-shadow:0 5px 30px #000}
+.camp-copy h1 span,.crew-heading h2 span,.hideout-strip h2 span{color:var(--acid);text-shadow:0 0 24px #9dff7655}
+.camp-copy p{max-width:400px;color:#ded9e6;font-size:14px;line-height:1.8;text-shadow:0 2px 12px #000}
+.camp-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.camp-primary,.camp-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;text-decoration:none;font:10px monospace;letter-spacing:.13em;transition:.25s}
+.camp-primary{background:var(--acid);color:#10130d;border:1px solid var(--acid);font-weight:bold}
+.camp-primary:hover{box-shadow:0 0 30px #9dff7666;transform:translateY(-3px)}
+.camp-secondary{color:#fff;border:1px solid #ffffff66;background:#09091077;backdrop-filter:blur(8px)}
+.camp-secondary:hover{border-color:var(--violet);color:var(--violet)}
+.crew-section{padding:20px 0 80px}
+.crew-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:0 0 30px}
+.crew-heading h2{font-size:clamp(48px,7vw,88px);line-height:.9;letter-spacing:-.07em;margin:15px 0}
+.crew-heading p{color:#aaa4b5;font-size:13px}
+.crew-total{font:9px monospace;letter-spacing:.15em;color:#a59caf;padding-bottom:8px}
+.crew-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.crew-card{position:relative;min-width:0;height:370px;padding:0;overflow:hidden;border:1px solid #ffffff1b;background:linear-gradient(150deg,#191321,#08080d);color:#fff;text-align:left;cursor:pointer;isolation:isolate;transition:transform .3s,border-color .3s}
+.crew-card:after{content:"";position:absolute;z-index:-1;inset:40% 0 0;background:linear-gradient(0deg,#07070cf5,transparent)}
+.crew-card img{position:absolute;z-index:-2;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 24%;filter:saturate(.8) brightness(.78);transition:transform .5s,filter .5s}
+.crew-card:hover{transform:translateY(-5px);border-color:#9dff7680}
+.crew-card:hover img{transform:scale(1.06);filter:saturate(1.05) brightness(.92)}
+.crew-meta{position:absolute;left:17px;top:16px;color:var(--acid);font:9px monospace;letter-spacing:.16em}
+.crew-card b,.crew-card small{position:absolute;left:18px;right:18px}
+.crew-card b{bottom:39px;font-size:24px;letter-spacing:-.04em}
+.crew-card small{bottom:18px;color:#c4bdce;font:9px monospace;letter-spacing:.16em}
+.hideout-strip{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:50px clamp(20px,5vw,70px);margin-bottom:60px;border:1px solid #9dff7633;background:radial-gradient(ellipse at 85% 50%,#9dff7612,transparent 50%),#0b0b11}
+.hideout-strip h2{font-size:clamp(34px,5vw,64px);line-height:.95;letter-spacing:-.06em;margin:16px 0}
+.hideout-strip p{color:#aaa4b5;font-size:13px}
+.crew-modal{position:fixed;z-index:100;inset:0;display:grid;place-items:center;padding:20px;background:#030308df;backdrop-filter:blur(14px)}
+.crew-modal[hidden]{display:none}
+.crew-modal-panel{position:relative;width:min(480px,100%);padding:38px;border:1px solid #9dff7666;background:linear-gradient(145deg,#171323,#07070c);box-shadow:0 0 70px #9dff7615}
+.crew-modal-close{position:absolute;right:14px;top:10px;background:none;border:0;color:white;font-size:32px;cursor:pointer}
+.crew-modal-panel h2{font-size:42px;margin:20px 0 8px;letter-spacing:-.06em}
+.crew-modal-panel>b{font:10px monospace;letter-spacing:.13em;color:var(--acid)}
+.crew-modal-panel p{color:#c6bfce;line-height:1.8;font-size:14px}
+.modal-stamp{display:block;margin-top:26px;color:#8f8799;font:9px monospace;letter-spacing:.17em}
+@keyframes campBreath{from{transform:scale(1.015) translateY(0)}to{transform:scale(1.06) translateY(-.5%)}}
+@media(max-width:700px){
+ main{width:100%;padding:10px 12px 45px}.top{margin:0 5px;font-size:9px}
+ .camp-hero{height:690px;min-height:0;margin:12px 0 52px}
+ .camp-art{background-position:54% center}
+ .camp-vignette{background:linear-gradient(0deg,#07070c 0%,rgba(5,5,10,.75) 35%,rgba(5,5,10,.08) 100%),linear-gradient(90deg,rgba(5,5,10,.35),transparent)}
+ .camp-topline,.camp-caption{left:14px;right:14px;font-size:7px;letter-spacing:.12em}
+ .camp-copy{left:22px;right:22px;top:auto;bottom:68px;transform:none}
+ .camp-copy h1{font-size:70px;margin:16px 0}
+ .camp-copy p{font-size:12px;max-width:340px}
+ .camp-actions{gap:8px}.camp-primary,.camp-secondary{font-size:8px;min-height:44px;padding:0 12px}
+ .crew-section{padding:0 5px 55px}.crew-heading{display:block}.crew-total{display:block;margin-top:16px}
+ .crew-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .crew-card{height:270px}.crew-card b{font-size:17px;left:12px}.crew-card small{font-size:7px;left:12px}
+ .crew-meta{left:12px;font-size:7px}
+ .hideout-strip{display:block;padding:30px 20px;margin:0 5px 30px}.hideout-strip .camp-primary{margin-top:15px}
+ .crew-modal-panel{padding:30px 24px}
+}
+@media(prefers-reduced-motion:reduce){.camp-art{animation:none}.crew-card,.crew-card img{transition:none}}
+
+</style></head>
+<body><main>
+<div class="top"><strong>YXNGJ / GAME DIVISION</strong><a href="../index.html#home">← BACK TO HOME</a></div>
+<section class="camp-hero" aria-label="YXNGJU crew camp">
+  <div class="camp-art"></div><div class="camp-vignette"></div>
+  <div class="camp-topline"><span>YXNGJU CREW / SAFE ZONE 001</span><span>THE VOID IS OURS</span></div>
+  <div class="camp-copy"><span class="eyebrow">AFTER THE LAST RAID / NIGHTFALL</span>
+    <h1>THE <span>CREW</span><br>IS HOME.</h1>
+    <p>Weapons down. Fire up. The whole crew owns this corner of the world. Meet the squad, check the gear, then head back into the Void.</p>
+    <div class="camp-actions"><a class="camp-primary" href="../game/index.html">ENTER VOID RUNNER ↗</a><a class="camp-secondary" href="#crew-roster">MEET THE CREW ↓</a></div>
+  </div>
+  <div class="camp-caption"><span>01 / THE HIDEOUT</span><span>NO RULES. JUST OUR WORLD.</span></div>
+</section>
+<section class="crew-section" id="crew-roster">
+  <div class="crew-heading"><div><span class="eyebrow">ROSTER / ALLIES & COMPANIONS</span><h2>YOUR <span>PEOPLE.</span></h2><p>Every face in the archive belongs to the YXNGJU universe.</p></div><span class="crew-total">13 ENTITIES / 04 NEW SIGNALS</span></div>
+  <div class="crew-grid">
+    <button class="crew-card" data-name="X-01" data-role="The signal / cyber operator" data-copy="The first entity. Watches the edges of the world and keeps the crew connected."><img loading="lazy" decoding="async" src="../entity-character.webp" alt="X-01 cyber operator"><span class="crew-meta">01 / X-01</span><b>THE SIGNAL</b><small>CYBER OPERATOR</small></button>
+    <button class="crew-card" data-name="RED SIGNAL" data-role="The spark / scout" data-copy="Always first to move. Keeps the fire alive and spots trouble before it reaches camp."><img loading="lazy" decoding="async" src="../home-art/anime-red-signal.webp" alt="Red-haired anime crew member"><span class="crew-meta">02 / RED SIGNAL</span><b>THE SPARK</b><small>SCOUT / FIREKEEPER</small></button>
+    <button class="crew-card" data-name="VOID COMPANION" data-role="The wild / beast keeper" data-copy="Never travels alone. The skeletal companion knows every hidden path in the ruins."><img loading="lazy" decoding="async" src="../home-art/anime-void-companion.webp" alt="Anime crew member with skeletal companion"><span class="crew-meta">03 / VOID COMPANION</span><b>THE WILD</b><small>BEAST KEEPER</small></button>
+    <button class="crew-card" data-name="HOODED REBEL" data-role="The blade / armorer" data-copy="Quiet hands, sharp steel. Keeps the blades clean and the crew ready."><img loading="lazy" decoding="async" src="../home-art/anime-hooded-swords.webp" alt="Hooded anime swordswoman"><span class="crew-meta">04 / HOODED REBEL</span><b>THE BLADE</b><small>ARMORER</small></button>
+    <button class="crew-card" data-name="CHROME SOUL" data-role="The watcher / strategist" data-copy="Says little, sees everything. Always watching the horizon for the next signal."><img loading="lazy" decoding="async" src="../home-art/anime-chrome-portrait.webp" alt="Silver-haired anime crew member"><span class="crew-meta">05 / CHROME SOUL</span><b>THE WATCHER</b><small>STRATEGIST</small></button>
+    <button class="crew-card" data-name="STREET CODE" data-role="The drifter / runner" data-copy="Moves between districts and brings back stories, supplies and strange finds."><img loading="lazy" decoding="async" src="../home-art/gallery-1499.webp" alt="Anime streetwear crew member"><span class="crew-meta">06 / STREET CODE</span><b>THE DRIFTER</b><small>RUNNER</small></button>
+    <button class="crew-card" data-name="AFTER HOURS" data-role="The phantom / infiltrator" data-copy="Appears after dark, disappears before sunrise. Knows the quiet routes."><img loading="lazy" decoding="async" src="../home-art/gallery-1498.webp" alt="Anime character in streetwear"><span class="crew-meta">07 / AFTER HOURS</span><b>THE PHANTOM</b><small>INFILTRATOR</small></button>
+    <button class="crew-card" data-name="VIOLET EYES" data-role="The observer / signal reader" data-copy="Reads the strange patterns in the sky and catches details nobody else notices."><img loading="lazy" decoding="async" src="../home-art/gallery-1496.webp" alt="Anime character with violet eyes"><span class="crew-meta">08 / VIOLET EYES</span><b>THE OBSERVER</b><small>SIGNAL READER</small></button>
+    <button class="crew-card" data-name="FANCY GIRL" data-role="The maker / creative" data-copy="Turns scraps into art, maps, custom gear and strange little inventions."><img loading="lazy" decoding="async" src="../home-art/gallery-1494.webp" alt="Anime character portrait"><span class="crew-meta">09 / FANCY GIRL</span><b>THE MAKER</b><small>CREATIVE</small></button>
+  </div>
+</section>
+<section class="hideout-strip">
+  <div><span class="eyebrow">CAMP STATUS / NIGHT 024</span><h2>TAKE A BREATH.<br><span>THEN GO LOUD.</span></h2><p>The camp is safe for now. The next run is waiting.</p></div>
+  <a class="camp-primary" href="../game/index.html">START THE NEXT RUN ↗</a>
+</section>
+<div class="crew-modal" id="crewModal" hidden role="dialog" aria-modal="true" aria-labelledby="crewModalTitle"><div class="crew-modal-panel"><button class="crew-modal-close" type="button" aria-label="Close">×</button><span class="eyebrow">YXNGJU / PERSONNEL FILE</span><h2 id="crewModalTitle"></h2><b id="crewModalRole"></b><p id="crewModalCopy"></p><span class="modal-stamp">CREW MEMBER / ACCESS GRANTED</span></div></div>
+<section class="grid">
+<article class="card"><div><small>01 / AVAILABLE NOW</small><h2>VOID RUNNER</h2><p>Enter the first YXNGJ game world and deploy into the Void Realm.</p></div><a href="../game/index.html">LAUNCH GAME ↗</a></article>
+<article class="card soon"><div><small>02 / IN DEVELOPMENT</small><h2>NEW WORLD</h2><p>A new game experience will be announced here.</p></div><span class="eyebrow">COMING SOON</span></article>
+<article class="card soon"><div><small>03 / FUTURE RELEASE</small><h2>ARCADE EXPERIMENTS</h2><p>Small playable experiments, prototypes and interactive challenges.</p></div><span class="eyebrow">PLANNED</span></article>
+</section>
+<section class="guide" id="game-guide" aria-labelledby="guide-title">
+  <span class="eyebrow">PLAYER GUIDE / راهنمای بازیکن</span>
+  <h2 id="guide-title">HOW TO <span>PLAY</span> / راهنمای بازی</h2>
+  <div class="guide-grid">
+    <article class="guide-card"><b>01 — OBJECTIVE / هدف</b><p>Survive the enemy fleets, destroy hostile ships, collect points and progress through the stages.</p><p lang="fa" dir="rtl">در برابر ناوگان دشمن زنده بمان، سفینه‌ها را نابود کن، امتیاز بگیر و مرحله‌ها را پشت سر بگذار.</p></article>
+    <article class="guide-card"><b>02 — MOVEMENT / حرکت</b><p>Use <strong>W A S D</strong> or the <strong>arrow keys</strong> to move your ship. On a phone, rotate to landscape and use the on-screen pad.</p><p lang="fa" dir="rtl">با کلیدهای W A S D یا جهت‌های کیبورد حرکت کن. در موبایل گوشی را افقی بگیر و از کنترل‌های روی صفحه استفاده کن.</p></article>
+    <article class="guide-card"><b>03 — COMBAT / مبارزه</b><p><strong>SPACE</strong> fires. Keep moving to avoid incoming shots. On mobile, hold FIRE.</p><p lang="fa" dir="rtl">با Space شلیک کن. برای فرار از گلوله‌ها مدام حرکت کن. در موبایل دکمه FIRE را نگه دار.</p></article>
+    <article class="guide-card"><b>04 — ABILITIES / قابلیت‌ها</b><p><strong>Q</strong> shield · <strong>E</strong> repair · <strong>F</strong> ultimate after 30 kills · <strong>R</strong> pixel laser.</p><p lang="fa" dir="rtl">Q سپر دفاعی · E تعمیر بدنه · F قابلیت نهایی پس از ۳۰ کشتن · R لیزر ویژه.</p></article>
+    <article class="guide-card"><b>05 — SURVIVAL / بقا</b><p>You start with 3 lives. Repair when your hull is low, watch your health bar and aim for a high score.</p><p lang="fa" dir="rtl">بازی را با ۳ جان شروع می‌کنی. وقتی سلامت سفینه کم شد از تعمیر استفاده کن و مراقب نوار سلامتی باش.</p></article>
+  </div>
+  <p class="guide-note">TIP / نکته: The game is designed for landscape play on phones. · بازی در موبایل به‌صورت افقی اجرا می‌شود.</p>
+</section>
+
+<section class="review-board" id="review-board" aria-labelledby="review-title">
+  <div class="review-head">
+    <span class="eyebrow">SIMULATED REVIEW PANEL / 10 PERSPECTIVES</span>
+    <h2 id="review-title">THE <span>REVIEW BOARD</span></h2>
+    <p>Ten independent review personas assess the current playable build. These are simulated expert-style evaluations, not real people or external AI services.</p>
+    <div class="review-score"><strong>8.3<span>/10</span></strong><div><b>FINAL GAME VERDICT</b><small>Strong visual identity · fun arcade loop · more balancing and content depth recommended</small></div></div>
+  </div>
+  <div class="review-grid">
+    <details class="review-card"><summary><b>01 / GAME DESIGNER</b><strong>8.6/10</strong></summary><p>Clear survival loop and readable abilities. Repair limits and rising pressure make decisions matter. More enemy patterns would deepen strategy.</p></details>
+    <details class="review-card"><summary><b>02 / GAMEPLAY BALANCER</b><strong>8.1/10</strong></summary><p>Difficulty now scales more consistently. Some late waves may still spike; playtest time-to-death and ability usage before final tuning.</p></details>
+    <details class="review-card"><summary><b>03 / VISUAL ART DIRECTOR</b><strong>8.9/10</strong></summary><p>The neon city, ship silhouettes, hit flashes and palette create a recognizable identity. Add more impact feedback for elite enemies.</p></details>
+    <details class="review-card"><summary><b>04 / UX REVIEWER</b><strong>8.4/10</strong></summary><p>Controls are discoverable and the pause state helps. Mobile touch targets and HUD overlap need checks on several screen sizes.</p></details>
+    <details class="review-card"><summary><b>05 / ACCESSIBILITY REVIEWER</b><strong>7.5/10</strong></summary><p>Keyboard and touch are supported, but remappable controls, stronger reduced-motion options and non-color-only cues would improve access.</p></details>
+    <details class="review-card"><summary><b>06 / PERFORMANCE ENGINEER</b><strong>8.5/10</strong></summary><p>Canvas rendering is lightweight for this scope. Verify frame pacing on lower-end phones and stop or throttle animation when the page is hidden.</p></details>
+    <details class="review-card"><summary><b>07 / MOBILE QA</b><strong>8.0/10</strong></summary><p>Landscape controls are present. Test iOS Safari fullscreen behavior, orientation prompts and touch cancellation on real devices.</p></details>
+    <details class="review-card"><summary><b>08 / SECURITY REVIEWER</b><strong>9.0/10</strong></summary><p>The game runs locally in the browser and has no score API or account system. Keep external code out and avoid unsafe HTML sinks for player data.</p></details>
+    <details class="review-card"><summary><b>09 / CONTENT DESIGNER</b><strong>7.8/10</strong></summary><p>Ten enemy fleets create progression, but bosses, mission goals, rewards and more varied stages would make longer sessions more memorable.</p></details>
+    <details class="review-card"><summary><b>10 / ARCADE PLAYER</b><strong>8.5/10</strong></summary><p>Fast, stylish and easy to start. I want a local high-score table, more weapon variety and a boss encounter at the end of a fleet.</p></details>
+  </div>
+  <div class="site-verdict">
+    <span class="eyebrow">FINAL JUDGE / WHOLE WEBSITE REVIEW</span>
+    <h3>YXNGJ SITE VERDICT <strong>8.2/10</strong></h3>
+    <p><b>Verdict:</b> A distinctive creative portfolio with a strong visual identity and an original playable arcade experience. Before public launch, complete real-device Safari/Chrome checks, hosting security headers, accessibility review, SEO metadata and a genuine human playtest. This is a simulated source-based review, not a certification or live audit.</p>
+  </div>
+</section>
+<style>
+.review-board{margin:70px 0 10px;padding:clamp(20px,4vw,42px);border:1px solid rgba(218,160,255,.34);border-radius:20px;background:radial-gradient(ellipse at 90% 0%,rgba(126,55,170,.18),transparent 42%),linear-gradient(145deg,rgba(28,17,40,.96),rgba(7,7,13,.98));box-shadow:0 25px 70px #0007}
+.review-head h2{font-size:clamp(30px,5vw,54px);margin:15px 0}.review-head h2 span{color:var(--pink);text-shadow:0 0 22px #b74dff}
+.review-head>p{max-width:720px;color:#c9bdd6;font-size:13px;line-height:1.8}
+.review-score{display:flex;gap:18px;align-items:center;margin:25px 0;padding:18px;border:1px solid rgba(141,247,255,.34);border-radius:14px;background:rgba(4,16,25,.5)}
+.review-score>strong{font-size:clamp(34px,6vw,58px);color:var(--cyan);white-space:nowrap;text-shadow:0 0 22px #53dfff55}.review-score>strong span{font-size:18px;color:#a99bb8}
+.review-score b,.review-score small{display:block}.review-score b{font:11px monospace;letter-spacing:.14em;color:#ff9ce6}.review-score small{margin-top:7px;color:#c9bdd6;line-height:1.6;font-size:12px}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:11px}
+.review-card{border:1px solid rgba(218,160,255,.22);border-radius:12px;background:linear-gradient(145deg,rgba(44,28,57,.72),rgba(9,9,16,.9));padding:15px;transition:border-color .2s,transform .2s}
+.review-card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.review-card summary{display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;list-style:none;font:10px monospace;letter-spacing:.07em;color:var(--cyan)}
+.review-card summary::-webkit-details-marker{display:none}.review-card summary strong{font-size:13px;color:#ff9ce6;white-space:nowrap}
+.review-card p{font-size:12px;line-height:1.75;color:#c9bdd6;margin:14px 0 2px}
+.site-verdict{margin-top:22px;padding:22px;border:1px solid rgba(255,102,218,.4);border-radius:14px;background:linear-gradient(110deg,rgba(82,28,85,.35),rgba(8,9,17,.82))}
+.site-verdict h3{font-size:clamp(21px,3vw,30px);margin:12px 0}.site-verdict h3 strong{color:var(--cyan);margin-left:8px}.site-verdict p{font-size:12px;line-height:1.85;color:#d1c4dc}
+@media(max-width:600px){.review-score{align-items:flex-start;flex-direction:column}.review-card{padding:13px}}
+</style>
+
+<div class="foot">© 2026 YXNGJ — GAME DIVISION</div>
+</main><script>
+(()=>{const modal=document.getElementById('crewModal');if(!modal)return;const title=document.getElementById('crewModalTitle'),role=document.getElementById('crewModalRole'),copy=document.getElementById('crewModalCopy');let previous=null;document.querySelectorAll('.crew-card').forEach(card=>card.addEventListener('click',()=>{previous=card;title.textContent=card.dataset.name;role.textContent=card.dataset.role;copy.textContent=card.dataset.copy;modal.hidden=false;document.body.style.overflow='hidden';modal.querySelector('button').focus()}));const close=()=>{modal.hidden=true;document.body.style.overflow='';previous?.focus()};modal.querySelector('.crew-modal-close').addEventListener('click',close);modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)close()})})();
+</script></body></html>

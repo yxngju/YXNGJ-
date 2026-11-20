@@ -12,7 +12,7 @@ const heroImg=document.querySelector('.x01-pose-image');
 const windows=[...document.querySelectorAll('.x01-window')];
 let pose=0,turn=0;
 const swap=(img,src)=>{if(!img||img.getAttribute('src')===src)return;img.style.opacity='0';window.setTimeout(()=>{img.src=src;img.style.opacity='1'},260)};
-const poses=['entity-character.png','entity-left-profile.jpg','entity-three-quarter.jpg','entity-back.jpg'];
+const poses=['entity-character.webp','entity-left-profile.webp','entity-three-quarter.webp','entity-back.webp'];
 if(!reduce&&heroImg)setInterval(()=>{pose=(pose+1)%poses.length;swap(heroImg,poses[pose])},5200);
 // Every window cycles through the site's own existing archive, with a different offset.
 windows.forEach((card,i)=>{const img=card.querySelector('img');let n=i*3;

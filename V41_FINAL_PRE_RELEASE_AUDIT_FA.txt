@@ -30,7 +30,7 @@ CHECKS PASSED
 - Game menu: game/index.html still contains its original start overlay, HUD, controls,
   instructions, and game navigation. The crew camp asset remains in game-world/crew-camp.webp
   and the Games portal references ../game-world/crew-camp.webp.
-- Player ship: game/player_ship_coelinho.png remains the configured player sprite.
+- Player ship: game/player_ship_coelinho.webp remains the configured player sprite.
 - SEO files: robots.txt and sitemap.xml exist and point to
   https://yxngju.github.io/yxngju-site/ .
 

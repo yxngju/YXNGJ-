@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#08090d">\n  <meta name="description" content="YXNGJ — an independent digital universe featuring cyberpunk art, interactive characters, Cyber Lab and the VOID RUNNER browser arcade game.">
+  <meta name="theme-color" content="#08090d">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+  <meta name="description" content="YXNGJ — an independent digital universe featuring cyberpunk art, interactive characters, Cyber Lab and the VOID RUNNER browser arcade game.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://yxngju.github.io/yxngju-site/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="YXNGJ — Enter My World">
   <meta property="og:description" content="Explore digital art, characters, Cyber Lab and VOID RUNNER by YXNGJ.">
   <meta property="og:url" content="https://yxngju.github.io/yxngju-site/">
-  <meta property="og:image" content="https://yxngju.github.io/yxngju-site/entity-character.png">
+  <meta property="og:image" content="https://yxngju.github.io/yxngju-site/entity-character.webp">
   <meta name="twitter:card" content="summary_large_image">
 
   <title>yxngj — Enter My World</title>
@@ -23,7 +27,7 @@
     <div class="header-right"><div class="header-label">WELCOME TO MY WORLD</div><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button></div>
   </header>
 
-  <nav class="side-menu" aria-label="Main navigation">
+  <nav class="side-menu" aria-label="Main navigation" tabindex="0">
     <a href="#home" class="active">HOME</a>
     <a href="#characters">XAI</a>
     <a href="#cyber-lab">CYBER LAB</a>
@@ -50,7 +54,7 @@
           <div class="home-character-orbit orbit-a"></div><div class="home-character-orbit orbit-b"></div>
           <div class="home-character-crosshair crosshair-a"></div><div class="home-character-crosshair crosshair-b"></div>
           <div class="home-character-glow"></div>
-          <img class="x01-pose-image" src="entity-character.png" alt="X-01, the YXNGJ signature character" fetchpriority="high">
+          <img decoding="async" class="x01-pose-image" src="entity-character.webp" alt="X-01, the YXNGJ signature character" fetchpriority="high">
           <div class="home-character-tag"><span>ONLY ONE / ORIGINAL ENTITY</span><strong>X-01</strong><small>IDENTITY / CLASSIFIED</small></div>
           <div class="home-character-coordinate">YXNGJ / SECTOR 01<br>LIVE CHARACTER FEED</div>
         </div>
@@ -65,26 +69,26 @@
       <section class="x01-window-section" aria-label="X-01 live character windows">
         <div class="x01-window-heading"><div><p class="small-title">ONE ENTITY / MULTIPLE FORMS</p><h2>THE <span>X-01</span> FILES</h2></div><span>LIVE VISUAL FEED / AUTO SHIFT</span></div>
         <div class="x01-window-grid">
-          <article class="x01-window" data-pose-window="0"><div class="x01-window-top"><span>01 / FANCY GIRL</span><i>● LIVE</i></div><img src="home-art/user-archive-01.webp" alt="YXNGJ archive artwork — BOMB SIGNAL" loading="lazy"><b>BOMB SIGNAL</b></article>
-          <article class="x01-window" data-pose-window="1"><div class="x01-window-top"><span>02 / RED SIGNAL</span><i>● LIVE</i></div><img src="home-art/user-archive-02.webp" alt="YXNGJ archive artwork — NIGHT SHIFT" loading="lazy"><b>NIGHT SHIFT</b></article>
-          <article class="x01-window" data-pose-window="2"><div class="x01-window-top"><span>03 / VOID COMPANION</span><i>● LIVE</i></div><img src="home-art/user-archive-03.webp" alt="YXNGJ archive artwork — BLUE STATIC" loading="lazy"><b>BLUE STATIC</b></article>
-          <article class="x01-window" data-pose-window="3"><div class="x01-window-top"><span>04 / CHROME SOUL</span><i>● LIVE</i></div><img src="home-art/user-archive-04.webp" alt="YXNGJ archive artwork — ZERO NOTIFICATIONS" loading="lazy"><b>ZERO NOTIFICATIONS</b></article>
+          <article class="x01-window" data-pose-window="0"><div class="x01-window-top"><span>01 / FANCY GIRL</span><i>● LIVE</i></div><img decoding="async" src="home-art/user-archive-01.webp" alt="YXNGJ archive artwork — BOMB SIGNAL" loading="lazy"><b>BOMB SIGNAL</b></article>
+          <article class="x01-window" data-pose-window="1"><div class="x01-window-top"><span>02 / RED SIGNAL</span><i>● LIVE</i></div><img decoding="async" src="home-art/user-archive-02.webp" alt="YXNGJ archive artwork — NIGHT SHIFT" loading="lazy"><b>NIGHT SHIFT</b></article>
+          <article class="x01-window" data-pose-window="2"><div class="x01-window-top"><span>03 / VOID COMPANION</span><i>● LIVE</i></div><img decoding="async" src="home-art/user-archive-03.webp" alt="YXNGJ archive artwork — BLUE STATIC" loading="lazy"><b>BLUE STATIC</b></article>
+          <article class="x01-window" data-pose-window="3"><div class="x01-window-top"><span>04 / CHROME SOUL</span><i>● LIVE</i></div><img decoding="async" src="home-art/user-archive-04.webp" alt="YXNGJ archive artwork — ZERO NOTIFICATIONS" loading="lazy"><b>ZERO NOTIFICATIONS</b></article>
         </div>
       </section>
       <section class="home-gallery" aria-label="yxngj visual archive">
         <div class="gallery-heading"><div><p class="small-title">YXNGJ ART DIRECTION / VISUAL ARCHIVE</p><h2>MY <span>UNIVERSE</span></h2><p>CHARACTERS · DIGITAL ART · STREET CULTURE · VISUAL WORLDS</p></div><span class="gallery-count">07 / SELECTED FRAGMENTS</span></div>
         <div class="gallery-controls"><button class="gallery-control gallery-prev-auto" type="button" aria-label="Previous artwork">←</button><span>DRIFTING THROUGH THE ARCHIVE</span><button class="gallery-control gallery-next-auto" type="button" aria-label="Next artwork">→</button></div><div class="holo-gallery" id="holoGalleryTrack">
-          <button class="holo-card card-tall" data-gallery="0" type="button"><img src="home-art/user-archive-01.webp" alt="YXNGJ user-selected anime artwork 1" loading="lazy"><span>01 / BOMB SIGNAL</span></button>
-          <button class="holo-card card-wide" data-gallery="1" type="button"><img src="home-art/user-archive-02.webp" alt="YXNGJ user-selected anime artwork 2" loading="lazy"><span>02 / NIGHT SHIFT</span></button>
-          <button class="holo-card" data-gallery="2" type="button"><img src="home-art/user-archive-03.webp" alt="YXNGJ user-selected anime artwork 3" loading="lazy"><span>03 / BLUE STATIC</span></button>
-          <button class="holo-card" data-gallery="3" type="button"><img src="home-art/user-archive-04.webp" alt="YXNGJ user-selected anime artwork 4" loading="lazy"><span>04 / ZERO NOTIFICATIONS</span></button>
-          <button class="holo-card card-tall" data-gallery="4" type="button"><img src="home-art/user-archive-05.webp" alt="YXNGJ user-selected anime artwork 5" loading="lazy"><span>05 / SILVER EYES</span></button>
-          <button class="holo-card" data-gallery="5" type="button"><img src="home-art/user-archive-06.webp" alt="YXNGJ user-selected anime artwork 6" loading="lazy"><span>06 / CREW CODE</span></button>
-          <button class="holo-card card-wide" data-gallery="6" type="button"><img src="home-art/user-archive-07.webp" alt="YXNGJ user-selected anime artwork 7" loading="lazy"><span>07 / AFTER HOURS</span></button>
+          <button class="holo-card card-tall" data-gallery="0" type="button"><img decoding="async" src="home-art/user-archive-01.webp" alt="YXNGJ user-selected anime artwork 1" loading="lazy"><span>01 / BOMB SIGNAL</span></button>
+          <button class="holo-card card-wide" data-gallery="1" type="button"><img decoding="async" src="home-art/user-archive-02.webp" alt="YXNGJ user-selected anime artwork 2" loading="lazy"><span>02 / NIGHT SHIFT</span></button>
+          <button class="holo-card" data-gallery="2" type="button"><img decoding="async" src="home-art/user-archive-03.webp" alt="YXNGJ user-selected anime artwork 3" loading="lazy"><span>03 / BLUE STATIC</span></button>
+          <button class="holo-card" data-gallery="3" type="button"><img decoding="async" src="home-art/user-archive-04.webp" alt="YXNGJ user-selected anime artwork 4" loading="lazy"><span>04 / ZERO NOTIFICATIONS</span></button>
+          <button class="holo-card card-tall" data-gallery="4" type="button"><img decoding="async" src="home-art/user-archive-05.webp" alt="YXNGJ user-selected anime artwork 5" loading="lazy"><span>05 / SILVER EYES</span></button>
+          <button class="holo-card" data-gallery="5" type="button"><img decoding="async" src="home-art/user-archive-06.webp" alt="YXNGJ user-selected anime artwork 6" loading="lazy"><span>06 / CREW CODE</span></button>
+          <button class="holo-card card-wide" data-gallery="6" type="button"><img decoding="async" src="home-art/user-archive-07.webp" alt="YXNGJ user-selected anime artwork 7" loading="lazy"><span>07 / AFTER HOURS</span></button>
         </div>
         <div class="gallery-foot"><span>yxngj / VISUAL ARCHIVE</span><span>MOVE TO INTERACT · SELECT TO EXPAND</span></div>
       </section>
-      <div class="gallery-lightbox" id="galleryLightbox" hidden><button class="gallery-close" type="button" aria-label="Close image">×</button><button class="gallery-prev" type="button" aria-label="Previous image">‹</button><img id="galleryLarge" src="" alt="Expanded artwork"><button class="gallery-next" type="button" aria-label="Next image">›</button><div class="gallery-lightbox-label" id="galleryLightboxLabel"></div></div>
+      <div class="gallery-lightbox" id="galleryLightbox" hidden><button class="gallery-close" type="button" aria-label="Close image">×</button><button class="gallery-prev" type="button" aria-label="Previous image">‹</button><img decoding="async" loading="lazy" id="galleryLarge" src="" alt="Expanded artwork"><button class="gallery-next" type="button" aria-label="Next image">›</button><div class="gallery-lightbox-label" id="galleryLightboxLabel"></div></div>
     </section>
 
     <section class="page character-room" id="characters" aria-label="Character room">
@@ -92,7 +96,7 @@
       <div class="entity-layout">
         <div class="entity-stage">
           <div class="entity-grid" aria-hidden="true"></div><div class="entity-crosshair" aria-hidden="true"></div>
-          <div class="entity-figure-wrap" aria-label="The approved X-01 character reference"><img class="entity-figure" src="entity-character.png" alt="X-01 character, pink-haired cyberpunk girl in dark streetwear"><div class="entity-aura"></div></div><canvas id="entityCanvas" aria-hidden="true"></canvas>
+          <div class="entity-figure-wrap" aria-label="The approved X-01 character reference"><img decoding="async" loading="lazy" class="entity-figure" src="entity-character.webp" alt="X-01 character, pink-haired cyberpunk girl in dark streetwear"><div class="entity-aura"></div></div><canvas id="entityCanvas" aria-hidden="true"></canvas>
           <div class="entity-scanline" aria-hidden="true"></div>
           <div class="entity-readout entity-readout-left"><span>FORM</span><b>UNDEFINED</b><span>MATTER</span><b>PARTICLE / 01</b><span>SYNC</span><b id="entitySync">98.4%</b></div>
           <div class="entity-readout entity-readout-right"><span>SUBJECT</span><b>X-01</b><span>STATUS</span><b class="entity-status"><i></i> OBSERVING</b></div>
@@ -109,12 +113,12 @@
       </div>
       <div class="entity-view-gallery" aria-label="X-01 character reference views">
         <div class="entity-view-heading"><span>SUBJECT REFERENCE / X-01</span><span>FOUR ANGLES · ARCHIVED</span></div>
-        <div class="entity-selected-view" aria-live="polite"><img id="entitySelectedImage" src="entity-front.jpg" alt="X-01 selected front view"><div class="entity-selected-meta"><span id="entitySelectedLabel">01 / FANCY GIRL</span><small>SELECTED SUBJECT ANGLE</small></div></div>
+        <div class="entity-selected-view" aria-live="polite"><img decoding="async" loading="lazy" id="entitySelectedImage" src="entity-front.webp" alt="X-01 selected front view"><div class="entity-selected-meta"><span id="entitySelectedLabel">01 / FANCY GIRL</span><small>SELECTED SUBJECT ANGLE</small></div></div>
         <div class="entity-view-grid">
-          <button class="entity-view-choice active" type="button" data-view-src="entity-front.jpg" data-view-label="01 / FANCY GIRL"><img src="entity-front.jpg" alt="X-01 front view"><span>01 / FRONT</span></button>
-          <button class="entity-view-choice" type="button" data-view-src="entity-left-profile.jpg" data-view-label="02 / LEFT PROFILE"><img src="entity-left-profile.jpg" alt="X-01 left-facing profile"><span>02 / LEFT PROFILE</span></button>
-          <button class="entity-view-choice" type="button" data-view-src="entity-back.jpg" data-view-label="03 / BACK VIEW"><img src="entity-back.jpg" alt="X-01 back view"><span>03 / BACK</span></button>
-          <button class="entity-view-choice" type="button" data-view-src="entity-three-quarter.jpg" data-view-label="04 / THREE-QUARTER"><img src="entity-three-quarter.jpg" alt="X-01 three-quarter view"><span>04 / THREE-QUARTER</span></button>
+          <button class="entity-view-choice active" type="button" data-view-src="entity-front.webp" data-view-label="01 / FANCY GIRL"><img decoding="async" loading="lazy" src="entity-front.webp" alt="X-01 front view"><span>01 / FRONT</span></button>
+          <button class="entity-view-choice" type="button" data-view-src="entity-left-profile.webp" data-view-label="02 / LEFT PROFILE"><img decoding="async" loading="lazy" src="entity-left-profile.webp" alt="X-01 left-facing profile"><span>02 / LEFT PROFILE</span></button>
+          <button class="entity-view-choice" type="button" data-view-src="entity-back.webp" data-view-label="03 / BACK VIEW"><img decoding="async" loading="lazy" src="entity-back.webp" alt="X-01 back view"><span>03 / BACK</span></button>
+          <button class="entity-view-choice" type="button" data-view-src="entity-three-quarter.webp" data-view-label="04 / THREE-QUARTER"><img decoding="async" loading="lazy" src="entity-three-quarter.webp" alt="X-01 three-quarter view"><span>04 / THREE-QUARTER</span></button>
         </div>
       </div>
       <p class="entity-hint">MOVE CLOSER // THE ENTITY RESPONDS TO YOUR PRESENCE <span>✦</span></p>
@@ -167,13 +171,22 @@ console.log(status);</textarea></div></div>
       </div>
       <section class="cyber-code-library" id="cyberCodeLibrary" aria-label="Cyber code library">
         <div class="cyber-library-heading"><div><p class="small-title">yxngj // SNIPPET ARCHIVE</p><h2>CODE <span>LIBRARY</span></h2><p>Choose a sample. It will load into the computer's code editor.</p></div><button class="cyber-library-top" id="backToCyberTop" type="button">BACK TO COMPUTER ↑</button></div>
+        <div class="cyber-learning-card" id="cyberSampleGuide" aria-live="polite" dir="rtl">
+          <strong id="cyberGuideTitle">این کد چه کاری انجام می‌دهد؟</strong>
+          <p id="cyberGuidePurpose">یک نمونه را انتخاب کن تا کاربرد واقعی، روش اجرا و نکته امنیتی آن را ببینی.</p>
+          <div class="cyber-guide-meta"><span><b>کاربرد:</b> <i id="cyberGuideUse">—</i></span><span><b>اجرا:</b> <i id="cyberGuideRun">—</i></span><span><b>نکته:</b> <i id="cyberGuideSafety">—</i></span></div>
+        </div>
         <div class="cyber-library-grid" id="cyberLibraryGrid">
           <button class="cyber-sample-card active" type="button" data-sample="hello"><span class="cyber-sample-index">01 / PYTHON</span><b>HELLO YXNGJ</b><small>A first Python script with clean terminal output.</small><i>OPEN SAMPLE ↗</i></button>
           <button class="cyber-sample-card" type="button" data-sample="hash"><span class="cyber-sample-index">02 / PYTHON</span><b>FILE HASH DEMO</b><small>Calculate a SHA-256 hash from a sample text.</small><i>OPEN SAMPLE ↗</i></button>
           <button class="cyber-sample-card" type="button" data-sample="password"><span class="cyber-sample-index">03 / PYTHON</span><b>PASSWORD CHECK</b><small>A simple local password-strength teaching example.</small><i>OPEN SAMPLE ↗</i></button>
           <button class="cyber-sample-card" type="button" data-sample="ports"><span class="cyber-sample-index">04 / PYTHON</span><b>PORT CONCEPTS</b><small>Learn common network ports using a static lookup.</small><i>OPEN SAMPLE ↗</i></button>
           <button class="cyber-sample-card" type="button" data-sample="js"><span class="cyber-sample-index">05 / JAVASCRIPT</span><b>LIVE STATUS UI</b><small>A tiny browser interface status example.</small><i>OPEN SAMPLE ↗</i></button>
-          <button class="cyber-sample-card" type="button" data-sample="base64"><span class="cyber-sample-index">06 / PYTHON</span><b>TEXT ENCODING</b><small>Demonstrate Base64 encoding and decoding text.</small><i>OPEN SAMPLE ↗</i></button>
+          <button class="cyber-sample-card" type="button" data-sample="base64"><span class="cyber-sample-index">06 / PYTHON</span><b>TEXT ENCODING</b><small>تبدیل متن به Base64 و برگرداندن آن؛ رمزنگاری نیست.</small><i>OPEN SAMPLE ↗</i></button>
+          <button class="cyber-sample-card" type="button" data-sample="filehash"><span class="cyber-sample-index">07 / PYTHON</span><b>REAL FILE SHA-256</b><small>محاسبه هش واقعی فایل برای بررسی تغییرکردن آن.</small><i>OPEN SAMPLE ↗</i></button>
+          <button class="cyber-sample-card" type="button" data-sample="generator"><span class="cyber-sample-index">08 / PYTHON</span><b>SECURE PASSWORD</b><small>ساخت گذرواژه تصادفی با مولد امن پایتون.</small><i>OPEN SAMPLE ↗</i></button>
+          <button class="cyber-sample-card" type="button" data-sample="localhost"><span class="cyber-sample-index">09 / PYTHON</span><b>LOCAL PORT CHECK</b><small>بررسی چند پورت مشخص روی کامپیوتر خودت.</small><i>OPEN SAMPLE ↗</i></button>
+          <button class="cyber-sample-card" type="button" data-sample="headers"><span class="cyber-sample-index">10 / PYTHON</span><b>WEB SECURITY HEADERS</b><small>بررسی هدرهای امنیتی وب‌سایت خودت.</small><i>OPEN SAMPLE ↗</i></button>
         </div>
       </section>
       <p class="cyber-footnote"><span>yxngj SECURITY RESEARCH</span><span>LEARN ETHICALLY // BUILD RESPONSIBLY</span></p>
@@ -222,5 +235,5 @@ console.log(status);</textarea></div></div>
   <script src="entity.js" defer></script>
   <script src="cyberlab.js" defer></script>
 <script src="yxngj-effects.js" defer></script>
-<script src="x01-motion.js" defer></script>\n</body>
+<script src="x01-motion.js" defer></script></body>
 </html>

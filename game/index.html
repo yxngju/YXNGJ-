@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="theme-color" content="#090313"><meta name="description" content="VOID RUNNER — a neon arcade survival game by YXNGJ. Play in your browser."><meta name="color-scheme" content="dark"><title>YXNGJ // VOID RUNNER — Neon Survival Arcade</title>
+<style>
+:root{--pink:#ff42d0;--violet:#a45cff;--cyan:#64eaff}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05020b;color:#fff;font-family:Arial,sans-serif;touch-action:none}#stage{position:fixed;inset:0;display:grid;place-items:center;background:#05020b}#game{display:block;width:min(100vw,177.7778vh);height:min(100vh,56.25vw);max-width:100vw;max-height:100vh;image-rendering:pixelated;touch-action:none;background:#080412;box-shadow:0 0 50px #8d25d455}#hud{position:fixed;left:1.2%;right:1.2%;top:1.5%;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none;text-shadow:0 0 10px #dc45ff;font: bold clamp(9px,1.15vw,15px) monospace;letter-spacing:1px}.brand{font-size:clamp(12px,1.7vw,21px);letter-spacing:3px;color:#ff65dc}.stat{margin-top:4px}.bar{height:7px;width:clamp(90px,19vw,190px);border:1px solid #ff59d9;background:#160a20;margin-top:4px}.fill{height:100%;background:linear-gradient(90deg,#ff3a9f,#ff9ce6);width:100%}.right{text-align:right}.right strong{color:#78f7ff;font-size:clamp(12px,1.6vw,20px)}#skills{position:fixed;left:50%;bottom:1.5%;transform:translateX(-50%);display:flex;gap:clamp(4px,.8vw,10px);z-index:3}button{font: bold clamp(9px,1vw,13px) monospace;letter-spacing:1px;color:#fff;background:#160a28eF;border:1px solid #b45cff;padding:clamp(5px,.8vw,10px) clamp(8px,1.1vw,14px);box-shadow:0 0 12px #a23cff66;touch-action:manipulation}button:disabled{opacity:.35}button{cursor:pointer;transition:transform .14s,border-color .14s,box-shadow .14s}button:hover{transform:translateY(-2px);border-color:#fff;box-shadow:0 0 18px #d34bff99}button:focus-visible{outline:2px solid #8df7ff;outline-offset:3px}button b{display:block;color:var(--cyan);font-size:clamp(12px,1.4vw,18px)}button small{color:#ff8fe0}#controls{position:fixed;inset:auto 1.8% 2%;display:none;justify-content:space-between;align-items:end;pointer-events:none;z-index:4}.pad{display:grid;grid-template-columns:42px 42px 42px;grid-template-rows:38px 38px;gap:3px;pointer-events:auto}.pad button{padding:0;font-size:17px;background:#170d2dcc}.pad [data-dir=up]{grid-column:2}.pad [data-dir=left]{grid-column:1;grid-row:2}.pad [data-dir=down]{grid-column:2;grid-row:2}.pad [data-dir=right]{grid-column:3;grid-row:2}#fire{width:68px;height:68px;border-radius:50%;border-color:#ff59d6;background:#4a0c39dd;font-size:11px;pointer-events:auto}#overlay{position:fixed;inset:0;z-index:8;display:grid;place-items:center;background:#05020bdc;backdrop-filter:blur(3px)}.panel{width:min(520px,90vw);padding:24px;text-align:center;border:1px solid #c34aff;background:linear-gradient(145deg,#1b0b2cee,#090611f5);box-shadow:0 0 55px #9c36ff55}.panel h1{white-space:pre-line;font-size:clamp(34px,7vw,60px);line-height:.9;margin:12px 0;color:#ff65dc;text-shadow:0 0 20px #ff35c8}.panel p{white-space:pre-line;color:#d4c4e3;line-height:1.5;font-size:13px}.game-guide{margin:12px auto 0;padding:10px 12px;max-height:28vh;overflow:auto;text-align:left;border:1px solid rgba(141,247,255,.25);background:rgba(4,10,20,.42);font:11px/1.7 Arial,Tahoma,sans-serif;color:#d9d4e6}.game-guide strong{color:#8df7ff}.game-guide .fa{display:block;margin-top:5px;text-align:right;font-family:Vazirmatn,Tahoma,sans-serif;line-height:2;color:#f0d9ff}.panel{max-height:94vh;overflow:auto;border-radius:18px;backdrop-filter:blur(14px)}.panel button{padding:12px 24px;background:linear-gradient(90deg,#7026b8,#d32b99)}.hint{font:10px/1.8 monospace;color:#a99bb8;margin-top:14px}#toast{position:fixed;top:18%;left:50%;transform:translateX(-50%);z-index:5;color:#fff;font:bold clamp(14px,2.5vw,25px) monospace;letter-spacing:3px;text-shadow:0 0 16px #ff38ce;opacity:0;pointer-events:none;white-space:nowrap}#pause-indicator{display:none;position:fixed;inset:0;z-index:7;place-items:center;background:#05020b99;color:#8df7ff;font:bold clamp(30px,8vw,72px) monospace;letter-spacing:.18em;text-shadow:0 0 28px #8df7ff}#rotate{display:none;position:fixed;inset:0;background:#090313;z-index:10;place-items:center;text-align:center;font: bold 17px monospace;color:#ff8ce4;padding:25px}
+@media (pointer:coarse) and (orientation:landscape){#controls{display:flex}}
+@media (pointer:coarse) and (orientation:portrait){#rotate{display:grid}#hud,#skills,#controls{display:none}}
+ 
+#return-nav{position:fixed;right:1.2%;bottom:1.4%;z-index:20;display:flex;gap:8px;pointer-events:auto}
+#return-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border:1px solid #74f4ff;background:rgba(7,9,22,.9);color:#eaffff;text-decoration:none;font:bold 10px monospace;letter-spacing:1px;box-shadow:0 0 14px #58eaff55;backdrop-filter:blur(6px)}
+#return-nav a:hover{background:#12313a;box-shadow:0 0 22px #58eaff99}
+@media(max-width:600px){#return-nav{right:8px;bottom:8px;gap:5px}#return-nav a{padding:0 8px;font-size:9px;min-height:34px}}
+</style></head><body>
+<nav id="return-nav" aria-label="Game navigation"><a href="../games/index.html">← GAME PORTAL</a><a href="../index.html#home">⌂ HOME</a></nav>
+<div id="stage"><canvas id="game" width="960" height="540"></canvas></div>
+<div id="hud"><div><div class="brand">卍 yxngj // VOID RUNNER</div><div class="stat">HULL <span id="hpnum">68</span>%</div><div class="bar"><div id="hpbar" class="fill"></div></div><div class="stat">LIVES <span id="lives">2</span>　KILLS <span id="kills">0</span></div></div><div class="right">SCORE <strong id="score">000000</strong><div class="stat">STAGE <strong id="level">01</strong>　WAVE <strong id="wave">01</strong></div></div></div>
+<div id="skills"><button id="q"><b>Q</b>SHIELD <small id="qv">READY</small></button><button id="e"><b>E</b>REPAIR <small>+HP</small></button><button id="f"><b>F</b>ULTIMATE <small id="fv">0/30</small></button><button id="r"><b>R</b>PIXEL LASER <small id="rv">2/2</small></button></div>
+<div id="controls"><div class="pad"><button data-dir="up">▲</button><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div><button id="fire">FIRE</button></div>
+<div id="toast"></div><div id="pause-indicator" aria-live="polite">PAUSED</div><div id="rotate">yxngj // TURN YOUR PHONE SIDEWAYS<br><br>برای اجرای بازی، گوشی را افقی بگیر.</div>
+<div id="overlay"><div class="panel"><div style="font:11px monospace;letter-spacing:4px;color:#70edff">THE NEXT CIVILIZATION</div><h1 id="title">VOID<br>RUNNER</h1><p id="message">NEON CITY SURVIVAL // ARCADE MODE<br>10 enemy fleets · adaptive enemy pressure · 2 lives · 10 enemy classes</p><button id="start">ENTER THE VOID</button><div class="game-guide"><strong>QUICK GUIDE</strong><br>Move: WASD / Arrow keys · Fire: SPACE<br>Q: Shield · E: Repair · F: Ultimate (30 kills) · R: Forward Overdrive Laser<br>Defeat 10 enemy classes in order. Each stage uses one ship type; enemies hold their ground until destroyed. Hull and firepower rise from weak to elite.<span class="fa" lang="fa" dir="rtl"><strong>راهنمای سریع:</strong><br>حرکت: WASD یا کلیدهای جهت‌نما · شلیک: Space<br>Q: سپر · E: تعمیر · F: قابلیت نهایی (۳۰ کشتن) · R: لیزر مستقیم از جلوی سفینه<br>۱۰ کلاس دشمن را به‌ترتیب شکست بده. هر مرحله فقط یک نوع سفینه دارد؛ دشمن‌ها تا نابود نشوند از میدان خارج نمی‌شوند. جون و قدرت شلیک آن‌ها از ضعیف تا حرفه‌ای بیشتر می‌شود.</span></div><div class="hint">OFFLINE ARCADE // P: PAUSE · BLUR: AUTO-PAUSE // yxngj</div></div></div>
+<script>
+(()=>{'use strict';
+const backgroundImage=new Image();backgroundImage.src="yxngj_anime_background.webp";const playerSprite=new Image();playerSprite.src="player_ship_coelinho.webp";const enemySprites=Array.from({length:10},(_,i)=>{const im=new Image();im.src=`enemy-ships/enemy-${i}.webp`;return im});
+const c=document.getElementById('game'),x=c.getContext('2d'),$=id=>document.getElementById(id),W=960,H=540,rand=(a,b)=>a+Math.random()*(b-a),clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const palette=[['#ff4b9b','#9cff62'],['#e9b45b','#72dfff'],['#35d6c7','#ff69bd'],['#ff525e','#65caff'],['#62ffdd','#ff9b39'],['#438dff','#ff577d'],['#ad62ff','#64efff'],['#ff9b38','#fff27a'],['#a9c9e9','#ff343e'],['#91bb45','#ffb45c'],['#a64cff','#ff4bd8']];
+let stageKills=0,stageQuota=12,stageSpawned=0,stageDone=false;let state='menu',keys={},touch={},ship=null,enemies=[],bullets=[],enemyBullets=[],particles=[],pickups=[],stars=[],score=0,kills=0,level=1,wave=0,lives=3,spawn=1.5,fireCD=0,damageCD=0,shield=0,shieldCooldown=0,respawnShield=0,ultimate=false,laserCharges=2,repairCharges=3,paused=false,laserActive=0,laserFlash=0,explosions=[],gameTime=0,last=performance.now(),toastTime=0,shake=0;
+for(let i=0;i<130;i++)stars.push({x:rand(0,W),y:rand(0,H),v:rand(8,28),s:Math.random()<.8?1:2});
+function toast(t){$('toast').textContent=t;$('toast').style.opacity=1;toastTime=1.8}
+function hud(){$('hpnum').textContent=ship?Math.ceil(ship.hp):0;$('hpbar').style.width=(ship?ship.hp/68*100:0)+'%';$('lives').textContent=lives;$('kills').textContent=kills;$('score').textContent=String(score).padStart(7,'0');$('level').textContent=String(level).padStart(2,'0');$('wave').textContent=String(wave+1).padStart(2,'0');$('qv').textContent=shield>0?Math.ceil(shield)+'s':shieldCooldown>0?Math.ceil(shieldCooldown)+'s':'READY';$('q').disabled=shieldCooldown>0||shield>0;$('fv').textContent=ultimate?'READY':Math.min(30,kills)+'/30';$('f').disabled=!ultimate;$('rv').textContent=laserCharges+'/2';$('e').querySelector('small').textContent='+'+repairCharges; $('e').disabled=repairCharges<=0||!ship||ship.hp>=100;$('r').disabled=laserCharges<=0||state!=='play'}
+function reset(){if(!backgroundImage.complete)backgroundImage.decode().catch(()=>{});score=0;kills=0;level=1;wave=0;lives=2;stageKills=0;stageQuota=12;stageSpawned=0;stageDone=false;spawn=1.2;fireCD=0;damageCD=0;shield=0;shieldCooldown=0;respawnShield=0;ultimate=false;laserCharges=2;repairCharges=3;paused=false;$('pause-indicator').style.display='none';laserActive=0;laserFlash=0;explosions=[];gameTime=0;enemies=[];bullets=[];enemyBullets=[];particles=[];pickups=[];ship={x:135,y:270,hp:68,speed:205};hud()}
+async function fullscreen(){try{if(!document.fullscreenElement)await document.documentElement.requestFullscreen();if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape').catch(()=>{})}catch(e){}}
+$('start').onclick=()=>{reset();state='play';$('overlay').style.display='none';fullscreen();toast('STAGE 01 // SURVIVE')};$('q').onclick=activateShield;$('e').onclick=repair;$('f').onclick=ultimateBlast;$('r').onclick=pixelLaser;
+addEventListener('keydown',e=>{let k=e.key.toLowerCase();keys[k]=true;if(k==='p'&&state==='play'){paused=!paused;$('pause-indicator').style.display=paused?'grid':'none';toast(paused?'PAUSED':'RESUME');}if(k==='q')activateShield();if(k==='e')repair();if(k==='f')ultimateBlast();if(k==='r'&&!e.repeat)pixelLaser();if(k===' '||k.startsWith('arrow'))e.preventDefault()});addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);addEventListener('blur',()=>{keys={};touch={};if(state==='play'&&!paused){paused=true;$('pause-indicator').style.display='grid'}});document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='play'){paused=true;$('pause-indicator').style.display='grid'}});
+document.querySelectorAll('[data-dir]').forEach(b=>{let d=b.dataset.dir;b.addEventListener('pointerdown',e=>{e.preventDefault();touch[d]=true});['pointerup','pointercancel','pointerleave'].forEach(n=>b.addEventListener(n,()=>touch[d]=false))});$('fire').addEventListener('pointerdown',e=>{e.preventDefault();touch.fire=true});['pointerup','pointercancel','pointerleave'].forEach(n=>$('fire').addEventListener(n,()=>touch.fire=false));
+function activateShield(){if(state!=='play'||shieldCooldown>0||shield>0)return;shield=4.5;shieldCooldown=22;toast('Q // SHIELD ONLINE · 4.5 SEC');hud()}
+function repair(){if(state!=='play'||repairCharges<=0||ship.hp>=100)return;repairCharges--;ship.hp=Math.min(68,ship.hp+18);toast('HULL REPAIRED +28 // '+repairCharges+' LEFT');hud()}
+function ultimateBlast(){if(state!=='play'||!ultimate)return;ultimate=false;enemyBullets=[];for(const e of enemies){burst(e.x,e.y,palette[e.type][0],18);score+=100;stageKills++;kills++}enemies=[];shake=12;burst(ship.x,ship.y,'#ff39c8',100);toast('VOID BREAKER // ALL HOSTILES ERASED');hud()}
+function pixelLaser(){
+ if(state!=='play'||laserCharges<=0||laserActive>0)return;
+ laserCharges--;laserActive=.52;laserFlash=.52;enemyBullets=[];
+ // A forward-facing beam only destroys enemies actually caught in its firing lane.
+ let hit=0;
+ for(const e of enemies){
+  if(e.x>ship.x+38 && Math.abs(e.y-ship.y)<Math.max(30,e.r+13)){
+   e.hp=0;kill(e);burst(e.x,e.y,'#a9fbff',34);hit++;
+  }
+ }
+ enemies=enemies.filter(e=>e.hp>0);
+ shake=hit?9:3;toast(hit?'OVERDRIVE LASER // '+hit+' TARGETS DESTROYED':'OVERDRIVE LASER // BEAM FIRED');hud()
+}
+function burst(px,py,color,n=14){
+ explosions.push({x:px,y:py,r:4,max:rand(28,48),t:.32,color});
+ for(let i=0;i<n;i++){let a=rand(0,Math.PI*2),v=rand(45,230);particles.push({x:px,y:py,vx:Math.cos(a)*v,vy:Math.sin(a)*v,t:rand(.28,.9),max:.9,color,s:Math.random()<.65?3:5})}
+ for(let i=0;i<Math.ceil(n*.35);i++){let a=rand(0,Math.PI*2),v=rand(20,110);particles.push({x:px,y:py,vx:Math.cos(a)*v,vy:Math.sin(a)*v,t:rand(.18,.42),max:.42,color:'#fff4c2',s:2})}
+}
+function shoot(){if(fireCD>0)return;fireCD=.19;bullets.push({x:ship.x+58,y:ship.y-13,vx:560},{x:ship.x+58,y:ship.y+13,vx:560})}
+function spawnGroup(){
+ if(stageDone||stageSpawned>=stageQuota)return;
+ const type=level-1; // exactly one enemy class per stage
+ const count=Math.min(3,stageQuota-stageSpawned,enemies.length<3?3-enemies.length:0);
+ for(let i=0;i<count;i++){
+  const hp=2+level*2;
+  enemies.push({x:1000+i*82,targetX:rand(650,825),y:rand(90,450),r:level>=8?27:22,hp,max:hp,type,v:48+level*7,phase:rand(0,6),cd:rand(2.8,4.2)-Math.min(.8,level*.05),age:0});
+  stageSpawned++;
+ }
+ wave=Math.floor(stageSpawned/3);
+}
+function kill(e){kills++;stageKills++;score+=120+level*35;burst(e.x,e.y,palette[e.type][0],22);if(Math.random()<.025)pickups.push({x:e.x,y:e.y});if(kills>=30)ultimate=true;if(stageKills>=stageQuota&&enemies.length<=1){stageDone=true}hud()}
+function hitPlayer(amount){if(shield>0||respawnShield>0||damageCD>0)return;ship.hp-=amount;damageCD=.55;shake=5;burst(ship.x,ship.y,'#ff397f',10);if(ship.hp<=0){lives--;if(lives>0){ship.hp=48;ship.x=480;ship.y=455;respawnShield=2.4;damageCD=1.2;enemyBullets=[];toast('REBOOT // 30 SEC INVULNERABILITY')}else{state='over';$('title').textContent='GAME\nOVER';$('message').textContent='FINAL SCORE: '+String(score)+'\nHOSTILE FLEET DEFEATED YOU';$('start').textContent='PLAY AGAIN';$('overlay').style.display='grid'}}hud()}
+function enemyFire(e){if(shield>0||respawnShield>0)return;let dx=(ship.x-e.x),dy=(ship.y-e.y),len=Math.hypot(dx,dy)||1;enemyBullets.push({x:e.x-14,y:e.y,vx:dx/len*(115+level*3),vy:dy/len*(115+level*3),r:4})}
+function update(dt){if(state!=='play'||paused)return;gameTime+=dt;fireCD-=dt;damageCD-=dt;shield=Math.max(0,shield-dt);shieldCooldown=Math.max(0,shieldCooldown-dt);respawnShield=Math.max(0,respawnShield-dt);laserActive=Math.max(0,laserActive-dt);laserFlash=Math.max(0,laserFlash-dt);toastTime-=dt;if(toastTime<=0)$('toast').style.opacity=0;let dx=(keys.a||keys.arrowleft||touch.left?-1:0)+(keys.d||keys.arrowright||touch.right?1:0),dy=(keys.w||keys.arrowup||touch.up?-1:0)+(keys.s||keys.arrowdown||touch.down?1:0),m=Math.hypot(dx,dy)||1;ship.x=clamp(ship.x+dx/m*ship.speed*dt,55,300);ship.y=clamp(ship.y+dy/m*ship.speed*dt,65,475);if(keys[' ']||touch.fire)shoot();
+spawn-=dt;if(spawn<=0&&stageSpawned<stageQuota&&enemies.length<3){spawnGroup();spawn=2.2}
+for(const e of enemies){e.age+=dt;e.x=Math.max(e.targetX,e.x-e.v*dt);e.y+=Math.sin(e.age*1.55+e.phase)*48*dt;e.cd-=dt;if(e.cd<=0){enemyFire(e);e.cd=(e.type===8||e.type===9||e.type===10)?Math.max(1.35,2.15-level*.045):Math.max(1.8,2.9+Math.random()*.8-level*.055)}if(Math.hypot(e.x-ship.x,e.y-ship.y)<e.r+24){e.hp=0;kill(e);hitPlayer(15)}}
+for(const b of bullets){b.x+=b.vx*dt;for(const e of enemies){if(e.hp>0&&Math.hypot(b.x-e.x,b.y-e.y)<e.r+7){e.hp-=1;b.x=1100;if(e.hp<=0)kill(e);break}}}bullets=bullets.filter(b=>b.x<1010);enemies=enemies.filter(e=>e.hp>0);
+for(const b of enemyBullets){b.x+=b.vx*dt;b.y+=b.vy*dt;if(Math.hypot(b.x-ship.x,b.y-ship.y)<b.r+15){b.x=-100;hitPlayer(11)}}enemyBullets=enemyBullets.filter(b=>b.y>-20&&b.y<560&&b.x>-30&&b.x<990);
+for(const p of pickups){p.x-=75*dt;if(Math.hypot(p.x-ship.x,p.y-ship.y)<23){ship.hp=Math.min(100,ship.hp+35);p.y=600;toast('REPAIR CELL +35 HULL');hud()}}pickups=pickups.filter(p=>p.x>-30);
+for(const p of particles){p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=.985;p.vy*=.985;p.t-=dt}particles=particles.filter(p=>p.t>0);for(const z of explosions){z.r+=(z.max-z.r)*Math.min(1,dt*12);z.t-=dt}explosions=explosions.filter(z=>z.t>0);if(stageSpawned>=stageQuota&&enemies.length===0){if(level<10){level++;stageKills=0;stageSpawned=0;stageDone=false;wave=0;ultimate=false;spawn=2.5;toast('STAGE '+String(level).padStart(2,'0')+' // NEW ENEMY CLASS')}else{state='victory';$('title').textContent='VOID\nCONQUERED';$('message').textContent='ALL 10 ENEMY CLASSES DEFEATED\nFINAL SCORE: '+String(score);$('start').textContent='PLAY AGAIN';$('overlay').style.display='grid'}}hud()}
+function polygon(points,fill,stroke='#b9a6c9'){x.beginPath();x.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)x.lineTo(points[i][0],points[i][1]);x.closePath();x.fillStyle=fill;x.fill();x.strokeStyle=stroke;x.lineWidth=2;x.stroke()}
+function drawCity(){
+  // Exact supplied anime-city reference image; no newly invented backdrop.
+  x.fillStyle='#07030f';x.fillRect(0,0,W,H);
+  if(backgroundImage.complete && backgroundImage.naturalWidth){
+    const iw=backgroundImage.naturalWidth, ih=backgroundImage.naturalHeight;
+    const scale=Math.max(W/iw,H/ih);
+    const sw=W/scale, sh=H/scale;
+    // Very subtle camera drift keeps the scene alive without distracting from play.
+    const driftX=Math.sin(gameTime*.12)*Math.min(10,sw*.012);
+    const driftY=Math.cos(gameTime*.10)*Math.min(6,sh*.008);
+    const sx=clamp((iw-sw)/2+driftX,0,Math.max(0,iw-sw));
+    const sy=clamp((ih-sh)/2+driftY,0,Math.max(0,ih-sh));
+    x.drawImage(backgroundImage,sx,sy,sw,sh,0,0,W,H);
+  }
+  // Preserve the reference image's mood while ensuring ships and projectiles stay legible.
+  x.fillStyle='#090014';x.globalAlpha=.18;x.fillRect(0,0,W,H);x.globalAlpha=1;
+  // Fine CRT scanlines and a restrained purple edge glow.
+  for(let yy=0;yy<H;yy+=4){x.fillStyle='#d4a5ff';x.globalAlpha=.045;x.fillRect(0,yy,W,1)}
+  x.globalAlpha=1;
+}
+function drawPlayer(){
+ x.save();x.translate(Math.round(ship.x),Math.round(ship.y));x.rotate(Math.PI/2);
+ const flicker=respawnShield>0&&Math.floor(gameTime*12)%2===0;
+ x.imageSmoothingEnabled=false;x.shadowColor='#8b9cff';x.shadowBlur=respawnShield>0?28:14;
+ if(playerSprite.complete&&playerSprite.naturalWidth){
+  const scale=.103,w=playerSprite.naturalWidth*scale,h=playerSprite.naturalHeight*scale;
+  if(flicker)x.globalAlpha=.35;
+  x.drawImage(playerSprite,-w/2,-h/2,w,h);
+ }else{
+  // Fallback silhouette if the pixel-art asset has not loaded yet.
+  polygon([[-7,-34],[-17,-20],[-43,-4],[-53,18],[-49,34],[-37,29],[-25,18],[-15,22],[-8,31],[0,35],[8,31],[15,22],[25,18],[37,29],[49,34],[53,18],[43,-4],[17,-20],[7,-34]],'#10121c','#a7b4d8');
+ }
+ if(flicker)x.globalAlpha=1;
+ x.restore()
+}
+function drawEnemy(e){
+ let [a,b]=palette[e.type];x.save();x.translate(Math.round(e.x),Math.round(e.y));x.rotate(-Math.PI/2);x.imageSmoothingEnabled=false;x.shadowColor=a;x.shadowBlur=10;const sprite=enemySprites[e.type];if(sprite&&sprite.complete&&sprite.naturalWidth){const sc=(e.type>=7?.31:.34),w=sprite.naturalWidth*sc,h=sprite.naturalHeight*sc;x.drawImage(sprite,-w/2,-h/2,w,h);}else{polygon([[-5,-e.r],[-14,-e.r*.35],[-e.r,-2],[-e.r*.72,e.r*.65],[0,e.r],[e.r,-2],[14,-e.r*.35],[5,-e.r]],a,b)}x.restore();if(e.hp<e.max){x.fillStyle='#270b2c';x.fillRect(e.x-e.r,e.y-e.r-7,e.r*2,3);x.fillStyle=a;x.fillRect(e.x-e.r,e.y-e.r-7,e.r*2*e.hp/e.max,3)}return;
+ if(e.type===10){
+  // VOID STALKER: angular purple stealth drone with a bright magenta core.
+  polygon([[-5,-size],[-15,-size*.45],[-size,-size*.05],[-size*.72,size*.55],[-24,size*.35],[-10,size*.58],[0,size],[10,size*.58],[24,size*.35],[size*.72,size*.55],[size,-size*.05],[15,-size*.45],[5,-size]],'#171020',a);
+  polygon([[-7,-size*.6],[0,-size*.9],[7,-size*.6],[13,size*.35],[0,size*.62],[-13,size*.35]],'#3c1758',b);
+  polygon([[-size*.72,-2],[-size*.38,-size*.25],[-size*.2,size*.36],[-size*.62,size*.48]],'#25123a','#c68aff');
+  polygon([[size*.72,-2],[size*.38,-size*.25],[size*.2,size*.36],[size*.62,size*.48]],'#25123a','#c68aff');
+  x.fillStyle='#ff4bd8';x.fillRect(-5,-7,10,13);x.fillStyle='#fff0ff';x.fillRect(-2,-4,4,6);
+  x.fillStyle='#7ef6ff';x.fillRect(-size*.72,-size*.04,5,4);x.fillRect(size*.48,-size*.04,5,4);
+  x.fillStyle='#ff8be8';x.fillRect(-2,size*.55,4,7);
+  x.restore();
+  if(e.hp<e.max){x.fillStyle='#270b2c';x.fillRect(e.x-e.r,e.y-e.r-7,e.r*2,3);x.fillStyle=a;x.fillRect(e.x-e.r,e.y-e.r-7,e.r*2*e.hp/e.max,3)}
+  return;
+ }
+ polygon([[-5,-size],[-14,-size*.35],[-size,-2],[-size*.72,size*.65],[-15,size*.35],[-6,size*.55],[0,size],[6,size*.55],[15,size*.35],[size*.72,size*.65],[size,-2],[14,-size*.35],[5,-size]],'#191523',a);polygon([[-5,-size*.55],[0,-size*.8],[5,-size*.55],[9,size*.35],[0,size*.58],[-9,size*.35]],a,b);x.fillStyle=b;x.fillRect(-3,-3,6,7);
+x.fillStyle='#0a0b14';x.fillRect(-size*.62,-size*.12,size*.28,size*.32);x.fillRect(size*.34,-size*.12,size*.28,size*.32);
+x.fillStyle=b;x.fillRect(-size*.52,-size*.08,size*.12,size*.12);x.fillRect(size*.40,-size*.08,size*.12,size*.12);
+x.fillStyle='#ffcf72';x.fillRect(-size*.18,size*.38,size*.12,4);x.fillRect(size*.06,size*.38,size*.12,4);
+x.fillStyle='#fff0c8';x.fillRect(-2,-size*.35,4,3);if(e.type===8||e.type===9){x.strokeStyle='#ffe69b';x.lineWidth=2;x.strokeRect(-size-4,-size-4,size*2+8,size*2+8)}x.restore();if(e.hp<e.max){x.fillStyle='#270b2c';x.fillRect(e.x-e.r,e.y-e.r-7,e.r*2,3);x.fillStyle=a;x.fillRect(e.x-e.r,e.y-e.r-7,e.r*2*e.hp/e.max,3)}}
+function render(){x.save();if(shake>0){x.translate(rand(-shake,shake),rand(-shake,shake));shake=Math.max(0,shake-.5)}drawCity();
+if(laserFlash>0&&ship){
+ const power=laserFlash/.52,beamX=ship.x+58;
+ x.save();x.globalAlpha=Math.min(1,power*1.5);x.shadowColor='#78f7ff';x.shadowBlur=28;
+ x.fillStyle='#5ceaff';x.fillRect(beamX,ship.y-13,W-beamX,26);
+ x.fillStyle='#dfffff';x.fillRect(beamX,ship.y-5,W-beamX,10);
+ x.fillStyle='#ffffff';for(let xx=beamX;xx<W;xx+=22)x.fillRect(xx,ship.y-17,8,34);
+ x.strokeStyle='#a8fbff';x.lineWidth=2;x.beginPath();x.moveTo(beamX,ship.y-23);x.lineTo(W,ship.y-23);x.moveTo(beamX,ship.y+23);x.lineTo(W,ship.y+23);x.stroke();x.restore();
+}
+for(const b of bullets){x.fillStyle='#8af3ff';x.shadowColor='#62eaff';x.shadowBlur=12;x.fillRect(b.x-8,b.y-2,14,4)}for(const b of enemyBullets){x.fillStyle='#ff477e';x.shadowColor='#ff236c';x.shadowBlur=10;x.fillRect(b.x-4,b.y-3,9,6)}x.shadowBlur=0;enemies.forEach(drawEnemy);for(const p of pickups){x.fillStyle='#ff77d9';x.font='bold 20px monospace';x.fillText('✚',p.x-7,p.y+7)}for(const z of explosions){x.save();x.globalAlpha=Math.max(0,z.t/.32);x.strokeStyle=z.color;x.lineWidth=3;x.shadowColor=z.color;x.shadowBlur=16;x.beginPath();x.arc(z.x,z.y,z.r,0,Math.PI*2);x.stroke();x.restore()}for(const p of particles){x.globalAlpha=Math.max(0,p.t/p.max);x.fillStyle=p.color;x.fillRect(p.x,p.y,p.s,p.s)}x.globalAlpha=1;if(ship)drawPlayer();if(ship&&(shield>0||respawnShield>0)){
+x.strokeStyle='#6beaff';x.lineWidth=3;x.shadowColor='#6beaff';x.shadowBlur=16;x.beginPath();x.arc(ship.x,ship.y,48,0,Math.PI*2);x.stroke()}x.restore()}
+function frame(now){let dt=Math.min(.04,(now-last)/1000);last=now;update(dt);render();requestAnimationFrame(frame)}requestAnimationFrame(frame);
+})();
+</script></body></html>
