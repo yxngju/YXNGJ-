@@ -1,0 +1,25 @@
+YXNGJU V59 — VISUAL UPGRADE & NAVIGATION SCROLL FIX
+Base: YXNGJU_V58_PORTFOLIO_REPAIR.zip
+
+Implemented:
+1. Added a V59 visual layer after the existing V57 theme; original stylesheets retained.
+2. Replaced green/acid navigation accents with violet/lilac and controlled red-pink accents.
+3. Added layered purple/red page backgrounds, vignette lighting and dimensional glass surfaces.
+4. Added 3D depth through layered gradients, inset highlights, shadows, backdrop blur and restrained hover lift on cards/buttons.
+5. Strengthened sidebar sizing and independent scrolling: fixed viewport bounds, min-height:0, overflow-y:scroll, overscroll containment, touch-action:pan-y, visible scrollbar and sticky menu header/footer.
+6. Added coordinated visual styling to Account, Admin and the standalone Games portal.
+7. Preserved existing HTML content and JavaScript behavior.
+
+Validation performed:
+- ZIP CRC integrity check.
+- JavaScript syntax checks for all .js files.
+- HTML local-reference and duplicate-ID scan for all HTML files.
+- CSS parser validation for all external CSS files.
+
+Not performed / cannot claim:
+- Real browser rendering, visual screenshot comparison, mouse-wheel/touchpad/touch interaction.
+- Physical mobile device testing.
+- Full functional regression of all links, forms and game interactions.
+- Live security penetration test.
+
+Important: V59 is a visual and navigation CSS upgrade. The sidebar has explicit native scroll rules, but the reported scrolling issue must still be confirmed in Chrome on the user's laptop. The 3D effect is CSS-based (depth, lighting and perspective), not a full WebGL/3D scene.

@@ -1,0 +1,21 @@
+YXNGJU V56 — SEARCH INDEX + VISIBILITY PERFORMANCE FIX
+Base: YXNGJU_SITE_V55_VISIBILITY_LIQUID_GLASS_FIX.zip
+
+Changes:
+1. Global search now reads page text through textContent rather than innerText. This allows indexing content inside inactive pages hidden with display:none.
+2. Project archive filtering now uses textContent so project cards remain searchable while their parent page is inactive.
+3. X-01 image cyclers now use IntersectionObserver and document.visibilityState. Timers start only while their target is visible and the browser tab is active, and stop when hidden/off-screen.
+4. Existing visual assets and page content were preserved.
+
+Validation:
+- JavaScript syntax check: run for all site JS files.
+- Python syntax compilation: run for all Python source files.
+- HTML duplicate-ID and local-reference checks: run.
+- ZIP CRC integrity: run.
+- Browser interaction, visual rendering, mobile device and live security tests are not claimed unless separately executed.
+
+Known limitations:
+- Account and Admin remain presentation-only; no production authentication or backend is included.
+- Cyber Lab behavior must be evaluated according to its current local bridge/simulator implementation; do not claim a complete OS sandbox.
+- The global search index is generated in the browser from current page text and does not search remote/backend content.
+- This release is a targeted fix, not a full rewrite or penetration-test certification.

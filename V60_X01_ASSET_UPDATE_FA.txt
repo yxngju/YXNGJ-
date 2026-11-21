@@ -1,0 +1,24 @@
+YXNGJU V60 — X-01 OFFICIAL CHARACTER REFERENCE UPDATE
+
+Base project: YXNGJU V59 (original static HTML/CSS/JavaScript project)
+
+Changes:
+1. Used the user's newly supplied four-angle character reference as the authoritative X-01 visual source.
+2. Cropped the supplied reference into four separate views: FRONT, LEFT PROFILE, BACK, THREE-QUARTER.
+3. Exported all four delivery images as optimized WebP files.
+4. Updated the X-01 gallery selection label from the old incorrect label to 01 / FRONT.
+5. Preserved the original supplied JPEG in reference/x01-four-angle-original.jpeg.
+6. Preserved the V59 site structure, content, scripts, and existing assets.
+
+Validation:
+- Node.js v22.16.0 available.
+- Syntax check passed for all root JavaScript files using node --check.
+- Project is a static HTML/CSS/JavaScript GitHub Pages site and has no package.json or npm dependencies; npm install is not applicable to this project. No package installation is required to serve the current static site.
+- Headless Chromium screenshot attempt did not complete in the execution environment; visual browser QA is still required on the user's laptop.
+- This update does not claim a full functional, performance, mobile, or penetration test.
+
+Next test steps:
+1. Open the site locally in Chrome/Edge.
+2. Verify X-01 four-view gallery, image sharpness, selection behavior, and mobile layout.
+3. Regression-test navigation, games, Cyber Lab, forms, and settings.
+4. Only after approval, update the existing GitHub repository while preserving its history.

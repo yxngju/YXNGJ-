@@ -50,4 +50,8 @@
   window.addEventListener('hashchange',()=>{const id=location.hash.slice(1)||'home';if(id!==current)showPage(id);});
   window.addEventListener('resize',()=>{if(innerWidth>760)closeMenu();});
   commitPage(location.hash.slice(1)||'home');
+  // Fail-safe: guarantee one visible page even if another script altered classes.
+  const ensureVisible=()=>{const id=ids.includes(location.hash.slice(1))?location.hash.slice(1):current;pages.forEach(p=>{const on=p.id===id;p.classList.toggle('active-page',on);p.setAttribute('aria-hidden',String(!on));});};
+  window.addEventListener('pageshow',ensureVisible);
+  window.addEventListener('load',ensureVisible,{once:true});
 })();

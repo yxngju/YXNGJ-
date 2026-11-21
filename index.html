@@ -7,32 +7,39 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-  <meta name="description" content="YXNGJ — an independent digital universe featuring cyberpunk art, interactive characters, Cyber Lab and the VOID RUNNER browser arcade game.">
+  <meta name="description" content="YXNGJU — personal portfolio of YXNGJ featuring web design, development experiments, digital projects and cybersecurity learning.">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://yxngju.github.io/yxngju-site/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="YXNGJ — Enter My World">
-  <meta property="og:description" content="Explore digital art, characters, Cyber Lab and VOID RUNNER by YXNGJ.">
+  <meta property="og:title" content="YXNGJU — Enter My World">
+  <meta property="og:description" content="Explore the web design portfolio, development projects and digital experiments by YXNGJ.">
   <meta property="og:url" content="https://yxngju.github.io/yxngju-site/">
   <meta property="og:image" content="https://yxngju.github.io/yxngju-site/entity-character.webp">
   <meta name="twitter:card" content="summary_large_image">
 
-  <title>yxngj — Enter My World</title>
+  <title>YXNGJU — Enter My World</title>
   <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="v57-theme.css">
+<link rel="stylesheet" href="yxngju-v59-visual-upgrade.css">
 </head>
 <body>
   <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
   <header class="header">
     <a href="#home" class="logo" aria-label="YXNGJU home">YXNGJU<span>✦</span></a>
-    <div class="header-right"><div class="header-label">WELCOME TO MY WORLD</div><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button></div>
+    <div class="header-right"><div class="header-label">WELCOME TO MY WORLD<br><span lang="fa" dir="rtl">به دنیای من خوش آمدی</span></div><button class="yx-search-trigger" type="button" aria-haspopup="dialog" aria-controls="yxSearch">⌕ <span>SEARCH / جست‌وجو</span></button><a class="auth-open" href="account.html"><span>ACCOUNT / ورود</span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button></div>
   </header>
 
   <nav class="side-menu" aria-label="Main navigation" tabindex="0">
-    <a href="#home" class="active">HOME</a>
-    <a href="#characters">XAI</a>
-    <a href="#cyber-lab">CYBER LAB</a>
-    <a href="games/index.html" class="external-game-link">GAME ↗</a>
-    <a href="#info">INFO</a>
+    <div class="menu-heading"><span>THE YXNGJU COLLECTION</span><small>مجموعه دنیای YXNGJU</small></div>
+    <a href="#home" class="active"><span>HOME</span><small lang="fa" dir="rtl">خانه</small></a>
+    <a href="#characters"><span>X-01 CHARACTER</span><small lang="fa" dir="rtl">شخصیت X-01</small></a>
+    <a href="#play-game"><span>PLAY GAME</span><small lang="fa" dir="rtl">بازی‌ها</small></a>
+    <a href="#cyber-lab"><span>CYBER LAB</span><small lang="fa" dir="rtl">آزمایشگاه سایبری</small></a>
+    <a href="#nexus"><span>NEXUS</span><small lang="fa" dir="rtl">مرکز NEXUS</small></a>
+    <a href="#projects"><span>PROJECTS</span><small lang="fa" dir="rtl">پروژه‌ها</small></a>
+    <a href="#info"><span>ABOUT YXNGJU</span><small lang="fa" dir="rtl">درباره YXNGJU</small></a>
+    <a href="#contact"><span>CONTACT</span><small lang="fa" dir="rtl">ارتباط با ما</small></a>
+    <div class="menu-foot"><span>INDEPENDENT BY DESIGN</span><small>EST. 2026 · YXNGJU</small></div>
   </nav>
   <div class="menu-backdrop"></div>
 
@@ -42,11 +49,12 @@
         <div class="home-hero-topline"><span>INDEPENDENT DIGITAL UNIVERSE</span><span>EST. 2026 / ONLINE</span></div>
         <div class="home-hero-copy">
           <p class="small-title">YXNGJ / DIGITAL IDENTITY — 001</p>
-          <h1 class="jp-neon-message" lang="ja">もう一度、<br><span>挑戦して。</span></h1>
+          <h1 class="jp-neon-message">ENTER THE<br><span>YXNGJU UNIVERSE.</span></h1>
           <p class="home-editorial-lead">CREATE · EVOLVE · SURVIVE</p>
           <p class="home-editorial-description">A living digital world shaped by code, character and imagination. This is the signal. This is our universe.</p>
           <div class="home-hero-actions">
             <a href="#characters" class="enter-button" data-page-link="characters">MEET X-01 <span>↗</span></a>
+            <a href="#contact" class="enter-button" data-page-link="contact">WORK WITH ME <span>↗</span></a>
           </div>
           <div class="home-hero-signature"><span>YXNGJ®</span><i></i><span>IDENTITY / CLASSIFIED</span></div>
         </div>
@@ -66,33 +74,27 @@
             <p>A personal AI assistant for desktop and mobile — designed to help you organize messages, work with apps, code, explore crypto information and talk things through. Built around user permission, privacy and control.</p>
             <span class="project-status">IN DEVELOPMENT <i></i></span>
           </div></div>
-      <section class="x01-window-section" aria-label="X-01 live character windows">
-        <div class="x01-window-heading"><div><p class="small-title">ONE ENTITY / MULTIPLE FORMS</p><h2>THE <span>X-01</span> FILES</h2></div><span>LIVE VISUAL FEED / AUTO SHIFT</span></div>
-        <div class="x01-window-grid">
-          <article class="x01-window" data-pose-window="0"><div class="x01-window-top"><span>01 / FANCY GIRL</span><i>● LIVE</i></div><img decoding="async" src="home-art/user-archive-01.webp" alt="YXNGJ archive artwork — BOMB SIGNAL" loading="lazy"><b>BOMB SIGNAL</b></article>
-          <article class="x01-window" data-pose-window="1"><div class="x01-window-top"><span>02 / RED SIGNAL</span><i>● LIVE</i></div><img decoding="async" src="home-art/user-archive-02.webp" alt="YXNGJ archive artwork — NIGHT SHIFT" loading="lazy"><b>NIGHT SHIFT</b></article>
-          <article class="x01-window" data-pose-window="2"><div class="x01-window-top"><span>03 / VOID COMPANION</span><i>● LIVE</i></div><img decoding="async" src="home-art/user-archive-03.webp" alt="YXNGJ archive artwork — BLUE STATIC" loading="lazy"><b>BLUE STATIC</b></article>
-          <article class="x01-window" data-pose-window="3"><div class="x01-window-top"><span>04 / CHROME SOUL</span><i>● LIVE</i></div><img decoding="async" src="home-art/user-archive-04.webp" alt="YXNGJ archive artwork — ZERO NOTIFICATIONS" loading="lazy"><b>ZERO NOTIFICATIONS</b></article>
+      <section class="home-destinations" aria-label="Explore YXNGJU / بخش‌های اصلی">
+        <div class="destination-heading"><span>EXPLORE THE UNIVERSE</span><b lang="fa" dir="rtl">بخش‌های اصلی دنیای YXNGJU</b></div>
+        <div class="destination-grid">
+          <a href="#play-game" data-page-link="play-game"><span>01 / ARCADE</span><b>PLAY GAME</b><small lang="fa" dir="rtl">ورود به دنیای بازی</small></a>
+          <a href="#cyber-lab" data-page-link="cyber-lab"><span>02 / RESEARCH</span><b>CYBER LAB</b><small lang="fa" dir="rtl">یادگیری و آزمایشگاه سایبری</small></a>
+          <a href="#nexus" data-page-link="nexus"><span>03 / SYSTEM</span><b>NEXUS</b><small lang="fa" dir="rtl">مرکز مدیریت هوشمند</small></a>
+          <a href="#projects" data-page-link="projects"><span>04 / ARCHIVE</span><b>PROJECTS</b><small lang="fa" dir="rtl">آرشیو پروژه‌ها</small></a>
         </div>
       </section>
-      <section class="home-gallery" aria-label="yxngj visual archive">
-        <div class="gallery-heading"><div><p class="small-title">YXNGJ ART DIRECTION / VISUAL ARCHIVE</p><h2>MY <span>UNIVERSE</span></h2><p>CHARACTERS · DIGITAL ART · STREET CULTURE · VISUAL WORLDS</p></div><span class="gallery-count">07 / SELECTED FRAGMENTS</span></div>
-        <div class="gallery-controls"><button class="gallery-control gallery-prev-auto" type="button" aria-label="Previous artwork">←</button><span>DRIFTING THROUGH THE ARCHIVE</span><button class="gallery-control gallery-next-auto" type="button" aria-label="Next artwork">→</button></div><div class="holo-gallery" id="holoGalleryTrack">
-          <button class="holo-card card-tall" data-gallery="0" type="button"><img decoding="async" src="home-art/user-archive-01.webp" alt="YXNGJ user-selected anime artwork 1" loading="lazy"><span>01 / BOMB SIGNAL</span></button>
-          <button class="holo-card card-wide" data-gallery="1" type="button"><img decoding="async" src="home-art/user-archive-02.webp" alt="YXNGJ user-selected anime artwork 2" loading="lazy"><span>02 / NIGHT SHIFT</span></button>
-          <button class="holo-card" data-gallery="2" type="button"><img decoding="async" src="home-art/user-archive-03.webp" alt="YXNGJ user-selected anime artwork 3" loading="lazy"><span>03 / BLUE STATIC</span></button>
-          <button class="holo-card" data-gallery="3" type="button"><img decoding="async" src="home-art/user-archive-04.webp" alt="YXNGJ user-selected anime artwork 4" loading="lazy"><span>04 / ZERO NOTIFICATIONS</span></button>
-          <button class="holo-card card-tall" data-gallery="4" type="button"><img decoding="async" src="home-art/user-archive-05.webp" alt="YXNGJ user-selected anime artwork 5" loading="lazy"><span>05 / SILVER EYES</span></button>
-          <button class="holo-card" data-gallery="5" type="button"><img decoding="async" src="home-art/user-archive-06.webp" alt="YXNGJ user-selected anime artwork 6" loading="lazy"><span>06 / CREW CODE</span></button>
-          <button class="holo-card card-wide" data-gallery="6" type="button"><img decoding="async" src="home-art/user-archive-07.webp" alt="YXNGJ user-selected anime artwork 7" loading="lazy"><span>07 / AFTER HOURS</span></button>
+      <section class="yx-latest" aria-labelledby="latestTitle">
+        <div class="yx-section-head"><div><span>WHAT'S MOVING / تازه‌ها</span><h2 id="latestTitle">LATEST <em>UPDATES.</em></h2><p lang="fa" dir="rtl">آخرین وضعیت پروژه‌ها و بخش‌های دنیای YXNGJU</p></div><a href="#projects" data-page-link="projects">ALL PROJECTS ↗ <small lang="fa" dir="rtl">همه پروژه‌ها</small></a></div>
+        <div class="yx-latest-grid">
+          <article class="yx-update-card"><span class="yx-status-dot">IN DEVELOPMENT</span><h3>NEXUS</h3><p>Personal operations workspace</p><p lang="fa" dir="rtl">سامانه مدیریت شخصی در حال توسعه</p><a href="#nexus" data-page-link="nexus">EXPLORE / مشاهده</a></article>
+          <article class="yx-update-card"><span class="yx-status-dot is-active">ACTIVE</span><h3>CYBER LAB</h3><p>Learning resources and code previews</p><p lang="fa" dir="rtl">منابع آموزشی و پیش‌نمایش کدها</p><a href="#cyber-lab" data-page-link="cyber-lab">EXPLORE / مشاهده</a></article>
+          <article class="yx-update-card"><span class="yx-status-dot is-active">PLAYABLE</span><h3>VOID RUNNER</h3><p>Browser arcade experience</p><p lang="fa" dir="rtl">بازی آرکید قابل اجرا در مرورگر</p><a href="game/index.html">PLAY / بازی</a></article>
         </div>
-        <div class="gallery-foot"><span>yxngj / VISUAL ARCHIVE</span><span>MOVE TO INTERACT · SELECT TO EXPAND</span></div>
-      </section>
-      <div class="gallery-lightbox" id="galleryLightbox" hidden><button class="gallery-close" type="button" aria-label="Close image">×</button><button class="gallery-prev" type="button" aria-label="Previous image">‹</button><img decoding="async" loading="lazy" id="galleryLarge" src="" alt="Expanded artwork"><button class="gallery-next" type="button" aria-label="Next image">›</button><div class="gallery-lightbox-label" id="galleryLightboxLabel"></div></div>
+      </section></div>
     </section>
 
     <section class="page character-room" id="characters" aria-label="Character room">
-      <div class="entity-heading"><p class="small-title">YXNGJ INTELLIGENCE DIVISION / 001</p><h1><span>XAI</span> <span>COMPANION</span></h1><p class="entity-subtitle">A NEW INTELLIGENCE IS TAKING SHAPE</p><p class="xai-intro">XAI is a planned 3D AI character being created to talk with you, understand requests and help carry out useful tasks. The goal is a natural, interactive companion with a distinct personality — built step by step.</p></div>
+      <div class="entity-heading"><p class="small-title">YXNGJ INTELLIGENCE DIVISION / 001</p><h1><span>X-01</span> CHARACTER</h1><p class="fa-copy page-fa-title" lang="fa" dir="rtl">شخصیت اصلی دنیای YXNGJU</p><p class="entity-subtitle">A NEW INTELLIGENCE IS TAKING SHAPE</p><p class="xai-intro">XAI is a planned 3D AI character being created to talk with you, understand requests and help carry out useful tasks. The goal is a natural, interactive companion with a distinct personality — built step by step.</p></div>
       <div class="entity-layout">
         <div class="entity-stage">
           <div class="entity-grid" aria-hidden="true"></div><div class="entity-crosshair" aria-hidden="true"></div>
@@ -113,9 +115,9 @@
       </div>
       <div class="entity-view-gallery" aria-label="X-01 character reference views">
         <div class="entity-view-heading"><span>SUBJECT REFERENCE / X-01</span><span>FOUR ANGLES · ARCHIVED</span></div>
-        <div class="entity-selected-view" aria-live="polite"><img decoding="async" loading="lazy" id="entitySelectedImage" src="entity-front.webp" alt="X-01 selected front view"><div class="entity-selected-meta"><span id="entitySelectedLabel">01 / FANCY GIRL</span><small>SELECTED SUBJECT ANGLE</small></div></div>
+        <div class="entity-selected-view" aria-live="polite"><img decoding="async" loading="lazy" id="entitySelectedImage" src="entity-front.webp" alt="X-01 selected front view"><div class="entity-selected-meta"><span id="entitySelectedLabel">01 / FRONT</span><small>SELECTED SUBJECT ANGLE</small></div></div>
         <div class="entity-view-grid">
-          <button class="entity-view-choice active" type="button" data-view-src="entity-front.webp" data-view-label="01 / FANCY GIRL"><img decoding="async" loading="lazy" src="entity-front.webp" alt="X-01 front view"><span>01 / FRONT</span></button>
+          <button class="entity-view-choice active" type="button" data-view-src="entity-front.webp" data-view-label="01 / FRONT"><img decoding="async" loading="lazy" src="entity-front.webp" alt="X-01 front view"><span>01 / FRONT</span></button>
           <button class="entity-view-choice" type="button" data-view-src="entity-left-profile.webp" data-view-label="02 / LEFT PROFILE"><img decoding="async" loading="lazy" src="entity-left-profile.webp" alt="X-01 left-facing profile"><span>02 / LEFT PROFILE</span></button>
           <button class="entity-view-choice" type="button" data-view-src="entity-back.webp" data-view-label="03 / BACK VIEW"><img decoding="async" loading="lazy" src="entity-back.webp" alt="X-01 back view"><span>03 / BACK</span></button>
           <button class="entity-view-choice" type="button" data-view-src="entity-three-quarter.webp" data-view-label="04 / THREE-QUARTER"><img decoding="async" loading="lazy" src="entity-three-quarter.webp" alt="X-01 three-quarter view"><span>04 / THREE-QUARTER</span></button>
@@ -126,7 +128,7 @@
 
 
     <section class="page cyber-lab-page" id="cyber-lab" aria-label="Cyber Lab">
-      <div class="cyber-heading"><div><p class="small-title">yxngj // RESEARCH DIVISION 04</p><h1>CYBER <span>LAB</span></h1><p class="page-lead">A quiet corner of the network. Explore code, inspect examples, learn.</p></div><div class="cyber-heading-actions"><div class="cyber-status"><i></i> CODE SHOWCASE READY <span>OFFLINE MODE</span></div><button class="cyber-library-jump" id="jumpToCodeLibrary" type="button">CODE LIBRARY <b>↓</b></button></div></div>
+      <div class="cyber-heading"><div><p class="small-title">yxngj // RESEARCH DIVISION 04</p><h1>CYBER <span>LAB</span></h1><p class="page-lead">A quiet corner of the network. Explore code, inspect examples, learn.</p><p class="fa-copy page-fa-title" lang="fa" dir="rtl">فضایی برای یادگیری برنامه‌نویسی، مفاهیم شبکه و امنیت سایبری.</p></div><div class="cyber-heading-actions"><div class="cyber-status"><i></i> CODE SHOWCASE READY <span>OFFLINE MODE</span></div><button class="cyber-library-jump" id="jumpToCodeLibrary" type="button">CODE LIBRARY <b>↓</b></button></div></div>
       <div class="cyber-room-grid">
         <aside class="cyber-side-panel">
           <div class="cyber-panel-title">LAB DIRECTORY <span>01—03</span></div>
@@ -226,12 +228,100 @@ console.log(status);</textarea></div></div>
         </article>
       </div>
       <div class="info-signature">yxngj <span>—</span> CYBERSECURITY / DESIGN / DIGITAL WORLDS</div>
+      <section class="yx-site-guide" aria-labelledby="siteGuideTitle">
+        <div class="page-eyebrow">VISITOR GUIDE / راهنمای سایت</div>
+        <h2 id="siteGuideTitle">FIND YOUR WAY <em>AROUND.</em></h2>
+        <p class="fa-copy" lang="fa" dir="rtl">راهنمای کوتاه برای پیدا کردن بخش‌های مختلف سایت و استفاده از امکانات آن.</p>
+        <div class="yx-guide-grid">
+          <article><b>01 · EXPLORE / گشت‌وگذار</b><p>Use the side menu to move between X-01, Play Game, Cyber Lab, NEXUS, Projects and Contact.</p><p lang="fa" dir="rtl">از منوی کناری برای رفتن به بخش شخصیت، بازی‌ها، آزمایشگاه، نکسوس، پروژه‌ها و ارتباط استفاده کن.</p></article>
+          <article><b>02 · SEARCH / جست‌وجو</b><p>Open Search in the top bar to find pages, projects and available experiences by keyword.</p><p lang="fa" dir="rtl">از جست‌وجوی بالای سایت برای پیدا کردن صفحه‌ها، پروژه‌ها و تجربه‌های موجود با کلمه کلیدی استفاده کن.</p></article>
+          <article><b>03 · PROJECTS / پروژه‌ها</b><p>Open Projects to search the archive or filter by software, learning, games and digital identity.</p><p lang="fa" dir="rtl">در آرشیو پروژه‌ها می‌توانی جست‌وجو کنی یا پروژه‌ها را بر اساس دسته‌بندی جدا کنی.</p></article>
+          <article><b>04 · GAMES / بازی‌ها</b><p>Choose Play Game, open an experience and follow the controls shown inside the game.</p><p lang="fa" dir="rtl">برای بازی وارد بخش بازی‌ها شو، تجربه موردنظر را باز کن و راهنمای کنترل داخل بازی را دنبال کن.</p></article>
+          <article><b>05 · CYBER LAB / آزمایشگاه</b><p>Explore lessons and code examples. The current console is a visual simulator and does not execute real commands or code.</p><p lang="fa" dir="rtl">نمونه‌کدها و آموزش‌ها را بررسی کن. کنسول فعلی فقط شبیه‌ساز بصری است و فرمان یا کد واقعی اجرا نمی‌کند.</p></article>
+          <article><b>06 · ACCOUNT & DOWNLOADS / حساب و دانلود</b><p>Account access is a UI preview until Supabase authentication is configured. Do not treat the current account page as active sign-in.</p><p lang="fa" dir="rtl">صفحه حساب تا زمان اتصال و پیکربندی Supabase فقط پیش‌نمایش است؛ ورود واقعی هنوز فعال نیست.</p></article>
+        </div>
+      </section>
     </section>
+
+    <section class="page glass-page" id="play-game" aria-label="Play Game / بازی‌ها">
+      <div class="page-eyebrow">YXNGJU ARCADE / 02 · دنیای بازی</div>
+      <h1>ENTER THE <em>GAME WORLD.</em></h1>
+      <p class="page-lead">Explore interactive experiences built inside the YXNGJU universe.</p>
+      <p class="page-lead fa-lead" lang="fa" dir="rtl">به دنیای بازی‌های YXNGJU وارد شو؛ تجربه‌های تعاملی و جهان‌هایی که در حال توسعه هستند.</p>
+      <div class="glass-feature game-feature">
+        <img src="game-room-art.webp" alt="Artwork for the YXNGJU game world" loading="lazy">
+        <div><span class="glass-kicker">01 / AVAILABLE EXPERIENCE · تجربه آماده</span><h2>VOID RUNNER</h2><p>A browser arcade challenge. Pilot your ship, avoid hostile units and survive as long as you can.</p><p class="fa-copy" lang="fa" dir="rtl">یک بازی آرکید تحت مرورگر؛ سفینه‌ات را هدایت کن، از دشمن‌ها دوری کن و تا جایی که می‌توانی زنده بمان.</p><a class="chrome-button" href="game/index.html">LAUNCH GAME ↗ <small lang="fa" dir="rtl">اجرای بازی</small></a></div>
+      </div>
+      <div class="glass-note"><b>MORE WORLDS IN DEVELOPMENT</b><span lang="fa" dir="rtl">جهان‌های بیشتری در دست ساخت هستند.</span></div>
+    </section>
+
+    <section class="page glass-page" id="nexus" aria-label="NEXUS">
+      <div class="page-eyebrow">YXNGJU SYSTEMS / 04 · سامانه‌های YXNGJU</div>
+      <h1>ONE SPACE. <em>FULL CONTROL.</em></h1>
+      <p class="page-lead">NEXUS is a personal operations workspace for planning, projects, finance and intelligent tools.</p>
+      <p class="page-lead fa-lead" lang="fa" dir="rtl">NEXUS یک فضای یکپارچه برای برنامه‌ریزی، مدیریت پروژه‌ها، امور مالی و ابزارهای هوشمند است.</p>
+      <div class="nexus-grid">
+        <article class="glass-card"><span>01 / DAILY PLANNER</span><h2>PLAN YOUR DAY</h2><p>Tasks, goals, habits and reminders.</p><p class="fa-copy" lang="fa" dir="rtl">مدیریت کارها، هدف‌ها، عادت‌ها و یادآورها.</p></article>
+        <article class="glass-card"><span>02 / PROJECT CONTROL</span><h2>BUILD & TRACK</h2><p>Keep projects, milestones and progress in one place.</p><p class="fa-copy" lang="fa" dir="rtl">پروژه‌ها، مراحل و میزان پیشرفت را یک‌جا مدیریت کن.</p></article>
+        <article class="glass-card"><span>03 / FINANCE</span><h2>KNOW YOUR NUMBERS</h2><p>Track income, expenses and financial reports.</p><p class="fa-copy" lang="fa" dir="rtl">درآمد، هزینه‌ها و گزارش‌های مالی را دنبال کن.</p></article>
+        <article class="glass-card"><span>04 / AI ASSISTANT</span><h2>THINK WITH NEXUS</h2><p>Connect supported AI tools with clear permissions.</p><p class="fa-copy" lang="fa" dir="rtl">اتصال ابزارهای هوش مصنوعی با دسترسی‌های شفاف.</p></article>
+      </div>
+      <div class="glass-note"><b>STATUS / IN DEVELOPMENT</b><span lang="fa" dir="rtl">وضعیت: در حال توسعه</span></div>
+    </section>
+
+    <section class="page glass-page" id="projects" aria-label="Projects / پروژه‌ها">
+      <div class="page-eyebrow">THE PROJECT ARCHIVE / 05 · آرشیو پروژه‌ها</div>
+      <h1>MADE TO <em>EXIST.</em></h1>
+      <p class="page-lead">A growing collection of digital products, interactive experiments and creative work.</p>
+      <p class="page-lead fa-lead" lang="fa" dir="rtl">مجموعه‌ای در حال گسترش از محصولات دیجیتال، تجربه‌های تعاملی و کارهای خلاقانه.</p>
+      <div class="yx-archive-tools">
+        <label class="yx-archive-search"><span>⌕</span><input id="projectSearch" type="search" placeholder="Search projects / جست‌وجوی پروژه‌ها" aria-label="Search projects"></label>
+        <div class="yx-filter-row" role="group" aria-label="Project categories">
+          <button class="yx-filter active" type="button" data-project-filter="all">ALL / همه</button>
+          <button class="yx-filter" type="button" data-project-filter="software">SOFTWARE / نرم‌افزار</button>
+          <button class="yx-filter" type="button" data-project-filter="learning">LEARNING / آموزشی</button>
+          <button class="yx-filter" type="button" data-project-filter="game">GAMES / بازی</button>
+          <button class="yx-filter" type="button" data-project-filter="identity">IDENTITY / هویت</button>
+        </div>
+        <p class="yx-results-count" id="projectCount" aria-live="polite">4 PROJECTS / ۴ پروژه</p>
+      </div>
+      <div class="project-grid" id="projectGrid">
+        <article class="glass-card project-card" data-category="software" data-search="nexus software planning finance assistant"><span>01 / SOFTWARE · IN DEVELOPMENT</span><h2>NEXUS</h2><p>A personal operations system connecting planning, projects, finance and intelligent tools.</p><p class="fa-copy" lang="fa" dir="rtl">سامانه مدیریت شخصی برای برنامه‌ریزی، پروژه‌ها، امور مالی و ابزارهای هوشمند.</p><a href="#nexus" data-page-link="nexus">VIEW PROJECT ↗ <small lang="fa" dir="rtl">مشاهده پروژه</small></a></article>
+        <article class="glass-card project-card" data-category="learning" data-search="cyber lab cybersecurity code education learning"><span>02 / EDUCATION · ACTIVE</span><h2>CYBER LAB</h2><p>A learning space for code samples and cybersecurity concepts. It is a visual simulator, not a live code execution environment.</p><p class="fa-copy" lang="fa" dir="rtl">فضای آموزشی برای نمونه‌کدها و مفاهیم امنیت سایبری؛ محیط فعلی شبیه‌ساز بصری است و کد را اجرا نمی‌کند.</p><a href="#cyber-lab" data-page-link="cyber-lab">EXPLORE LAB ↗ <small lang="fa" dir="rtl">ورود به آزمایشگاه</small></a></article>
+        <article class="glass-card project-card" data-category="game" data-search="void runner game arcade spaceship"><span>03 / INTERACTIVE · ACTIVE</span><h2>VOID RUNNER</h2><p>A browser-based arcade game set in the YXNGJU universe.</p><p class="fa-copy" lang="fa" dir="rtl">بازی آرکید مرورگری در دنیای YXNGJU.</p><a href="game/index.html">PLAY NOW ↗ <small lang="fa" dir="rtl">شروع بازی</small></a></article>
+        <article class="glass-card project-card" data-category="identity" data-search="x01 character identity art"><span>04 / DIGITAL IDENTITY · ACTIVE</span><h2>X-01</h2><p>The signature character and visual identity of this digital universe.</p><p class="fa-copy" lang="fa" dir="rtl">شخصیت اصلی و هویت بصری این دنیای دیجیتال.</p><a href="#characters" data-page-link="characters">MEET X-01 ↗ <small lang="fa" dir="rtl">مشاهده شخصیت</small></a></article>
+      </div>
+    </section>
+
+    <section class="page glass-page" id="contact" aria-label="Contact / ارتباط">
+      <div class="page-eyebrow">OPEN CHANNEL / 07 · راه‌های ارتباطی</div>
+      <h1>LET'S <em>CONNECT.</em></h1>
+      <p class="page-lead">Have an idea, a question or a project in mind? Get in touch.</p>
+      <p class="page-lead fa-lead" lang="fa" dir="rtl">ایده‌ای داری، سؤالی هست یا می‌خواهی درباره یک پروژه صحبت کنیم؟ از راه‌های زیر پیام بده.</p>
+      <div class="contact-grid">
+        <a class="glass-card contact-card" href="mailto:Benyaminabadi7@gmail.com"><span>EMAIL / ایمیل</span><b>Benyaminabadi7@gmail.com</b><i>OPEN MAIL ↗</i></a>
+        <a class="glass-card contact-card" href="https://www.instagram.com/yxngju/" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM / اینستاگرام</span><b>@yxngju</b><i>OPEN PROFILE ↗</i></a>
+        <a class="glass-card contact-card" href="https://t.me/yxngju" target="_blank" rel="noopener noreferrer"><span>TELEGRAM / تلگرام</span><b>t.me/yxngju</b><i>OPEN CHANNEL ↗</i></a>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="yx-jp-footer"><span class="jp-motto" lang="ja">諦めない</span><small>NEVER GIVE UP / © 2026 YXNGJ</small></footer>
+  <footer class="yx-jp-footer">
+    <div class="yx-footer-main"><div><b class="yx-footer-brand">YXNGJU ✦</b><p lang="fa" dir="rtl">یک دنیای دیجیتال مستقل برای خلاقیت، فناوری و تجربه‌های تعاملی.</p></div>
+      <div><b>EXPLORE / گشت‌وگذار</b><a href="#projects" data-page-link="projects">Projects / پروژه‌ها</a><a href="#cyber-lab" data-page-link="cyber-lab">Cyber Lab / آزمایشگاه</a><a href="#nexus" data-page-link="nexus">NEXUS</a></div>
+      <div><b>CONTACT / ارتباط</b><a href="mailto:Benyaminabadi7@gmail.com">Email / ایمیل</a><a href="https://www.instagram.com/yxngju/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://t.me/yxngju" target="_blank" rel="noopener noreferrer">Telegram</a></div>
+    </div><small>NEVER GIVE UP / © 2026 YXNGJ</small>
+  </footer>
+  <section class="yx-search-dialog" id="yxSearch" role="dialog" aria-modal="true" aria-labelledby="yxSearchTitle" aria-hidden="true">
+    <div class="yx-search-backdrop" data-search-close></div><div class="yx-search-panel">
+      <div class="yx-search-head"><div><span>YXNGJU INDEX</span><h2 id="yxSearchTitle">SEARCH THE <em>UNIVERSE.</em></h2></div><button type="button" data-search-close aria-label="Close search">×</button></div>
+      <label class="yx-global-search"><span>⌕</span><input id="yxGlobalSearchInput" type="search" placeholder="Search pages, projects, games... / جست‌وجو" autocomplete="off"></label>
+      <div class="yx-search-results" id="yxSearchResults" aria-live="polite"><p>Start typing to search / برای جست‌وجو تایپ کن</p></div>
+    </div>
+  </section>
   <script src="navigation.js" defer></script>
-  <script src="home-gallery.js" defer></script>
+  <script src="site-features.js" defer></script>
   <script src="entity.js" defer></script>
   <script src="cyberlab.js" defer></script>
 <script src="yxngj-effects.js" defer></script>

@@ -1,0 +1,15 @@
+YXNGJU V60 — TEST NOTES
+
+Current package type: static site (HTML, CSS, JavaScript).
+Runtime: browser; no build step and no package manager needed for the current V59-based site.
+
+Local test server command (Windows PowerShell):
+  py -m http.server 8000
+
+Then open:
+  http://localhost:8000
+
+Important:
+- Run the command from the folder containing index.html.
+- This is a local static preview, not the production backend.
+- Forms, authentication, admin persistence, Redis, background queues, and server telemetry are not active in this static release.
