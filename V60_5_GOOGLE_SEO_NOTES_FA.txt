@@ -1,0 +1,13 @@
+YXNGJU V60.5 — GOOGLE SEARCH PREPARATION
+
+Changes:
+- Corrected canonical, Open Graph and sitemap base URLs to https://yxngju.github.io/YXNGJ-/
+- Updated robots.txt sitemap reference.
+- Added root, game and games URLs to sitemap.
+- Marked account/admin utility pages noindex.
+- Refined homepage description and social preview metadata.
+
+Important:
+- This archive has not been deployed to GitHub Pages.
+- Search Console ownership verification and sitemap submission still require the site owner to complete the Google UI steps.
+- Indexing and ranking are controlled by Google and are not guaranteed.

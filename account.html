@@ -1,15 +1,63 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080a10"><meta name="robots" content="noindex,nofollow"><title>YXNGJU — Account</title><link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="v57-theme.css">
-<link rel="stylesheet" href="yxngju-v59-visual-upgrade.css">
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080713"><meta name="robots" content="noindex,nofollow">
+<title>YXNGJU — Login</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="v57-theme.css"><link rel="stylesheet" href="yxngju-v59-visual-upgrade.css">
 <style>
-.account-wrap{min-height:100vh;display:grid;place-items:center;padding:35px 18px;background:radial-gradient(ellipse at 20% 20%,rgba(100,153,220,.22),transparent 42%),radial-gradient(ellipse at 80% 75%,rgba(160,125,210,.18),transparent 40%)}
-.account-card{width:min(520px,100%);padding:clamp(24px,5vw,44px);border:1px solid rgba(225,236,255,.32);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.17),rgba(18,25,41,.86));box-shadow:0 24px 70px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.2);backdrop-filter:blur(26px)}
-.account-card h1{font-size:clamp(34px,8vw,52px);margin:18px 0 5px}.account-card p{color:#b8c5d9;line-height:1.8;font-size:13px}.account-fa{font-family:Tahoma,Arial,sans-serif;letter-spacing:0!important;line-height:2!important}
-.account-actions{display:grid;gap:12px;margin:26px 0}.account-provider,.account-submit{width:100%;padding:14px 16px;border:1px solid rgba(222,234,255,.35);border-radius:14px;background:linear-gradient(140deg,rgba(255,255,255,.16),rgba(30,40,60,.6));color:#eef4ff;font-size:13px;text-align:left}
-.account-provider[disabled],.account-submit[disabled]{opacity:.55;cursor:not-allowed}.account-field{display:grid;gap:7px;margin:15px 0;color:#c8d4e7;font-size:11px}.account-field input{padding:14px;border:1px solid rgba(220,233,255,.26);border-radius:13px;background:rgba(4,8,15,.5);color:white}.account-notice{margin-top:20px;padding:13px;border:1px solid rgba(255,206,130,.3);border-radius:13px;background:rgba(255,190,90,.07);font-size:11px;color:#e5d4b7;line-height:1.8}.account-back{display:inline-block;margin-top:20px;color:#cfe2ff;text-decoration:none;font-size:11px}
-</style></head><body><div class="account-wrap"><main class="account-card"><div class="page-eyebrow">YXNGJU IDENTITY / ACCOUNT ACCESS</div><h1>WELCOME <em>BACK.</em></h1><p>Sign in or create your YXNGJU account.</p><p class="account-fa" lang="fa" dir="rtl">به حساب کاربری YXNGJU وارد شو یا یک حساب جدید بساز.</p>
-<div class="account-actions"><button class="account-provider" disabled>Continue with Google · ورود با گوگل</button><button class="account-provider" disabled>Continue with GitHub · ورود با گیت‌هاب</button></div>
-<label class="account-field">EMAIL ADDRESS / ایمیل<input type="email" placeholder="you@example.com" disabled></label><label class="account-field">PHONE NUMBER / شماره موبایل<input type="tel" placeholder="+..." disabled></label><label class="account-field">PASSWORD / گذرواژه<input type="password" placeholder="••••••••" disabled></label><button class="account-submit" disabled>CONTINUE / ادامه</button>
-<div class="account-notice">AUTHENTICATION NOT CONNECTED YET<br><span class="account-fa" lang="fa" dir="rtl">این صفحه فعلاً طراحی رابط کاربری است. ورود واقعی Google، GitHub، ایمیل و شماره موبایل پس از اتصال پروژه Supabase، تنظیم OAuth و قوانین امنیتی فعال می‌شود.</span></div>
-<a class="account-back" href="index.html">← BACK TO YXNGJU / بازگشت به سایت</a></main></div></body></html>
+:root{color-scheme:dark;--login-white:#f5f4ff;--login-muted:#c3bfd2}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{min-height:100vh;background:#070711;color:var(--login-white);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.login-scene{position:relative;isolation:isolate;min-height:100svh;display:grid;place-items:center;padding:34px 18px;overflow:hidden;background:radial-gradient(ellipse at 50% 48%,rgba(76,65,151,.38),transparent 38%),radial-gradient(ellipse at 12% 22%,rgba(17,132,221,.34),transparent 32%),radial-gradient(ellipse at 88% 76%,rgba(202,77,146,.25),transparent 34%),linear-gradient(145deg,#080916 0%,#10152a 48%,#080713 100%)}
+.login-scene:before,.login-scene:after{content:"";position:absolute;inset:-35%;z-index:-1;pointer-events:none;filter:blur(17px);opacity:.8}
+.login-scene:before{background:conic-gradient(from 35deg at 50% 50%,transparent 0 8%,rgba(41,153,255,.0) 10%,rgba(50,154,255,.65) 11%,transparent 13% 29%,rgba(191,81,255,.0) 31%,rgba(210,93,255,.55) 32%,transparent 34% 55%,rgba(255,111,176,.0) 57%,rgba(255,111,176,.42) 58%,transparent 60% 100%);animation:aurora-drift 18s ease-in-out infinite alternate}
+.login-scene:after{background:radial-gradient(ellipse at 25% 48%,transparent 0 27%,rgba(53,173,255,.48) 28%,transparent 29% 100%),radial-gradient(ellipse at 75% 55%,transparent 0 31%,rgba(194,94,255,.42) 32%,transparent 33% 100%);transform:rotate(-18deg);opacity:.6}
+@keyframes aurora-drift{from{transform:translate3d(-2%,1%,0) rotate(-8deg) scale(1)}to{transform:translate3d(2%,-1%,0) rotate(8deg) scale(1.08)}}
+.login-card{width:min(100%,430px);padding:clamp(27px,6vw,44px);border:1px solid rgba(230,226,255,.32);border-radius:27px;background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(16,20,39,.56) 45%,rgba(12,13,28,.76));box-shadow:0 25px 90px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.2),0 0 55px rgba(105,100,255,.12);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px)}
+.login-kicker{font-size:10px;letter-spacing:3px;color:#d7d5ef;opacity:.8}.login-card h1{font-size:clamp(39px,10vw,52px);letter-spacing:-2px;line-height:1;margin:20px 0 4px;font-weight:750}.login-subtitle{font-size:13px;color:#dedbea;margin:0 0 33px}.login-form{display:grid;gap:14px}.login-field{position:relative;display:block}.login-field input{width:100%;height:52px;padding:0 48px 0 16px;border:1px solid rgba(235,231,255,.45);border-radius:13px;background:rgba(9,12,26,.24);color:#fff;font:14px Arial,sans-serif;outline:none;transition:border-color .18s,background .18s,box-shadow .18s}.login-field input::placeholder{color:rgba(225,222,241,.55)}.login-field input:focus{border-color:#c7c1ff;background:rgba(20,24,48,.5);box-shadow:0 0 0 3px rgba(146,132,255,.14)}
+.field-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);width:21px;height:21px;color:#f4f1ff;opacity:.92;pointer-events:none}.password-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#f4f1ff;padding:8px;cursor:pointer;font-size:17px}.password-toggle:focus-visible,.login-submit:focus-visible,.signup-toggle:focus-visible{outline:2px solid #d8d1ff;outline-offset:3px}
+.login-options{display:flex;align-items:center;justify-content:space-between;margin-top:-2px;font-size:12px;color:#f0edf8}.remember{display:flex;align-items:center;gap:8px;cursor:pointer}.remember input{accent-color:#b6a4ff;width:15px;height:15px}.login-submit{height:51px;margin-top:23px;width:100%;border:1px solid rgba(239,235,255,.62);border-radius:13px;background:linear-gradient(115deg,rgba(255,255,255,.13),rgba(255,255,255,.04));color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:background .18s,border-color .18s,transform .18s}.login-submit:hover{background:rgba(255,255,255,.16);border-color:#fff}.login-submit:active{transform:scale(.99)}.signup-line{font-size:12px;margin:17px 0 0;color:#f1eff8}.signup-toggle{border:0;background:none;padding:0;color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer;font:inherit}.login-feedback{display:none;margin:16px 0 0;padding:12px 13px;border:1px solid rgba(255,205,130,.35);border-radius:12px;background:rgba(255,185,85,.09);color:#f4dfbd;font-size:12px;line-height:1.7}.login-feedback.show{display:block}.login-fa{font-family:Tahoma,Arial,sans-serif;direction:rtl;text-align:right}.login-back{display:block;text-align:center;margin-top:24px;color:#dedaf2;text-decoration:none;font-size:11px;opacity:.85}.login-back:hover{opacity:1;text-decoration:underline}.login-brand{position:absolute;left:24px;bottom:22px;font-size:12px;letter-spacing:2px;color:rgba(255,255,255,.72)}.login-brand span{color:#b9a8ff}
+@media(max-width:480px){.login-scene{padding:22px 16px}.login-card{border-radius:23px;padding:29px 24px}.login-brand{left:18px;bottom:12px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){.login-scene:before{animation:none}.login-field input,.login-submit{transition:none}}
+</style></head>
+<body>
+<main class="login-scene">
+<section class="login-card" aria-labelledby="loginTitle">
+<div class="login-kicker">YXNGJU ✦ IDENTITY ACCESS</div>
+<h1 id="loginTitle">Login</h1><p class="login-subtitle" id="loginSubtitle">Welcome back</p>
+<form id="loginForm" novalidate>
+<div class="login-form">
+<label class="login-field"><input id="loginEmail" name="email" type="email" autocomplete="username" placeholder="Email address" aria-label="Email address" required><svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></label>
+<label class="login-field"><input id="loginPassword" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="Password" aria-label="Password" required><button class="password-toggle" id="passwordToggle" type="button" aria-label="Show password" aria-pressed="false">◉</button></label>
+<div class="login-options"><label class="remember"><input id="rememberMe" type="checkbox" name="remember"> <span>Remember me</span></label><span id="modeLabel">SECURE ACCESS</span></div>
+</div>
+<button class="login-submit" id="submitButton" type="submit">Login</button>
+<p class="signup-line"><span id="signupPrompt">Don’t have an account?</span> <button class="signup-toggle" id="signupToggle" type="button">Signup</button></p>
+<div class="login-feedback" id="loginFeedback" role="status" aria-live="polite"></div>
+</form>
+<a class="login-back" href="index.html">← BACK TO YXNGJU</a>
+</section>
+<div class="login-brand">DREAM <span>·</span> CODE <span>·</span> CREATE</div>
+</main>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(()=>{
+ const form=document.getElementById('loginForm');
+ const email=document.getElementById('loginEmail');
+ const password=document.getElementById('loginPassword');
+ const toggle=document.getElementById('passwordToggle');
+ const signup=document.getElementById('signupToggle');
+ const submit=document.getElementById('submitButton');
+ const title=document.getElementById('loginTitle');
+ const subtitle=document.getElementById('loginSubtitle');
+ const prompt=document.getElementById('signupPrompt');
+ const feedback=document.getElementById('loginFeedback');
+ let signupMode=false;
+ toggle.addEventListener('click',()=>{const visible=password.type==='password';password.type=visible?'text':'password';toggle.textContent=visible?'◎':'◉';toggle.setAttribute('aria-label',visible?'Hide password':'Show password');toggle.setAttribute('aria-pressed',String(visible));password.focus()});
+ signup.addEventListener('click',()=>{signupMode=!signupMode;title.textContent=signupMode?'Create account':'Login';subtitle.textContent=signupMode?'Join the YXNGJU universe':'Welcome back';submit.textContent=signupMode?'Create account':'Login';prompt.textContent=signupMode?'Already have an account?':'Don’t have an account?';signup.textContent=signupMode?'Login':'Signup';password.autocomplete=signupMode?'new-password':'current-password';feedback.classList.remove('show');feedback.textContent=''});
+ form.addEventListener('submit',async event=>{event.preventDefault();feedback.classList.remove('show');if(!email.value.trim()||!email.checkValidity()){email.reportValidity();return}if(password.value.length<8){password.setCustomValidity('Password must contain at least 8 characters.');password.reportValidity();password.setCustomValidity('');return}if(!window.YXNGJU_SUPABASE_URL||window.YXNGJU_SUPABASE_URL.includes('YOUR-PROJECT')||!window.YXNGJU_SUPABASE_ANON_KEY||window.YXNGJU_SUPABASE_ANON_KEY.includes('YOUR_SUPABASE')){feedback.innerHTML='<span class="login-fa">اتصال پایگاه‌داده هنوز تنظیم نشده. ابتدا مراحل فایل SUPABASE_SETUP_FA را انجام بده.</span>';feedback.classList.add('show');return}try{const sb=window.supabase.createClient(window.YXNGJU_SUPABASE_URL,window.YXNGJU_SUPABASE_ANON_KEY);const result=signupMode?await sb.auth.signUp({email:email.value.trim(),password:password.value,options:{emailRedirectTo:location.origin+location.pathname}}):await sb.auth.signInWithPassword({email:email.value.trim(),password:password.value});if(result.error)throw result.error;if(signupMode){feedback.textContent='ثبت‌نام ارسال شد. ایمیلت را برای تأیید حساب بررسی کن.'}else{await sb.from('login_events').insert({user_id:result.data.user.id,email:result.data.user.email,event_type:'login'});location.href='index.html#home';return}feedback.classList.add('show')}catch(err){feedback.textContent='خطا: '+(err.message||'احراز هویت انجام نشد.');feedback.classList.add('show')}});
+})();
+</script>
+</body></html>

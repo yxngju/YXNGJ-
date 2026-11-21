@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /admin.html
-Disallow: /account.html
-Sitemap: https://yxngju.github.io/yxngju-site/sitemap.xml
+Sitemap: https://yxngju.github.io/YXNGJ-/sitemap.xml

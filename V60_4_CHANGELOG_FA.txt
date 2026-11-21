@@ -1,0 +1,11 @@
+YXNGJU V60.4 — AUTH / DATABASE / MOBILE GAME PATCH
+
+- account.html به Supabase Auth متصل شد: ثبت‌نام و ورود واقعی پس از تنظیم کلیدهای عمومی.
+- admin.html از پیش‌نمایش به پنل محافظت‌شده تبدیل شد؛ بررسی نقش owner/admin از جدول admin_users پیش از نمایش داده‌ها.
+- نمایش فهرست ایمیل کاربران، نام نمایشی، زمان عضویت، آخرین فعالیت و رخدادهای ورود. رمز عبور هیچ‌گاه نمایش داده نمی‌شود.
+- supabase-setup.sql: جداول profiles, admin_users, login_events, contact_messages، trigger ساخت پروفایل و سیاست‌های RLS.
+- supabase-config.js: محل تنظیم Project URL و anon key؛ بدون secret.
+- game/index.html: جلوگیری از منوی Copy/انتخاب متن روی کنترل‌های بازی موبایل و بهبود pointer handling.
+
+QA انجام‌شده: بررسی ساختار HTML/JS، بررسی SQL از نظر وجود RLS/policies، بررسی وجود placeholders و فایل‌های راهنما.
+QA مسدود: ورود واقعی، ساخت دیتابیس ابری و دسترسی مدیر تا زمان وارد کردن Supabase credentials و اجرای SQL توسط مالک قابل تست نیست. تست نفوذ خارجی/آنلاین نیز هنوز انجام نشده است.
