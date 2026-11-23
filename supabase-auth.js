@@ -4,9 +4,9 @@
   "use strict";
   const SUPABASE_URL = "https://iakawdizgxnjbfkxpqtr.supabase.co";
   const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_ycOtmZz5s_yCmr20A5b06w_Ly_VpFSP";
-  const OWNER_EMAIL = "benyaminabadi7@gmail.com";
   const ADMIN_URL = new URL("admin.html", window.location.href).href;
   const ACCOUNT_URL = new URL("account.html", window.location.href).href;
+  let currentUser = null;
 
   if (!window.supabase?.createClient) {
     console.error("Supabase JS library did not load.");
@@ -27,7 +27,7 @@
     status.textContent = message;
   };
   const busy = (on) => {
-    ["googleBtn", "submitBtn", "modeBtn", "resetBtn", "logoutBtn"].forEach(id => {
+    ["googleBtn", "submitBtn", "modeBtn", "resetBtn", "logoutBtn", "profileSaveBtn", "passwordSaveBtn"].forEach(id => {
       const el = $(id); if (el) el.disabled = on;
     });
   };
@@ -44,6 +44,7 @@
     status.style.display = "none";
   }
   async function identifyUser(user) {
+    currentUser = user;
     $("authPanel").hidden = true;
     $("signedPanel").hidden = false;
     $("signedEmail").textContent = user.email || "Signed in";
@@ -52,12 +53,16 @@
     let role = null;
     const { data, error } = await client.from("admin_users").select("role").eq("user_id", user.id).maybeSingle();
     if (!error && data?.role) role = data.role;
-    if (role === "owner" && (user.email || "").toLowerCase() === OWNER_EMAIL) {
+    if (role === "owner") {
       $("signedRole").textContent = "دسترسی مالک تأیید شد.";
       $("adminLink").hidden = false;
     } else {
       $("signedRole").textContent = "حساب کاربری عادی · دسترسی مدیریتی فعال نیست.";
     }
+    const metadata = user.user_metadata || {};
+    const displayName = metadata.display_name || (role === "owner" ? "yxngj-admin" : (user.email || "").split("@")[0]);
+    $("signedName").textContent = "نام نمایشی: " + displayName;
+    $("displayName").value = displayName;
     // Record a single login event per browser tab/session. The database policy validates uid and JWT email.
     const marker = "yxngju-login-event-" + user.id;
     if (!sessionStorage.getItem(marker)) {
@@ -121,11 +126,45 @@
     show(error ? "ارسال لینک بازیابی ناموفق بود: " + error.message : "اگر این ایمیل ثبت شده باشد، لینک بازیابی برایش ارسال می‌شود.", !!error);
     busy(false);
   });
+  $("profileForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const displayName = $("displayName").value.trim();
+    if (!currentUser) { show("ابتدا وارد حساب شو.", true); return; }
+    if (!displayName) { show("نام نمایشی را وارد کن.", true); return; }
+    busy(true);
+    const { data, error } = await client.auth.updateUser({
+      data: { ...(currentUser.user_metadata || {}), display_name: displayName }
+    });
+    if (error) {
+      show("ذخیره نام نمایشی ناموفق بود: " + error.message, true);
+      busy(false); return;
+    }
+    currentUser = data.user;
+    $("signedName").textContent = "نام نمایشی: " + displayName;
+    show("نام نمایشی ذخیره شد. برای ورود همچنان از ایمیل استفاده می‌شود.");
+    busy(false);
+  });
+  $("passwordForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const password = $("newPassword").value;
+    if (!currentUser) { show("ابتدا وارد حساب شو.", true); return; }
+    if (password !== $("confirmPassword").value) { show("تکرار گذرواژه با گذرواژه جدید یکسان نیست.", true); return; }
+    busy(true);
+    const { error } = await client.auth.updateUser({ password });
+    if (error) {
+      show("تغییر گذرواژه ناموفق بود: " + error.message, true);
+      busy(false); return;
+    }
+    $("passwordForm").reset();
+    show("گذرواژه با موفقیت تغییر کرد.");
+    busy(false);
+  });
   $("logoutBtn").addEventListener("click", async () => {
     busy(true);
     const { error } = await client.auth.signOut();
     if (error) { show("خروج ناموفق بود: " + error.message, true); busy(false); return; }
     sessionStorage.clear();
+    currentUser = null;
     $("signedPanel").hidden = true;
     $("authPanel").hidden = false;
     show("از حساب خارج شدی.");
@@ -138,6 +177,7 @@
       setTimeout(() => identifyUser(session.user), 0);
     }
     if (event === "SIGNED_OUT") {
+      currentUser = null;
       $("signedPanel").hidden = true;
       $("authPanel").hidden = false;
     }

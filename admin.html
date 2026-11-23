@@ -14,13 +14,12 @@ body{visibility:hidden}.admin-auth-check{visibility:visible;max-width:700px;marg
  const content=document.getElementById("adminContent");
  const url="https://iakawdizgxnjbfkxpqtr.supabase.co";
  const key="sb_publishable_ycOtmZz5s_yCmr20A5b06w_Ly_VpFSP";
- const owner="benyaminabadi7@gmail.com";
  if(!window.supabase?.createClient){gate.textContent="بارگذاری سرویس احراز هویت ناموفق بود.";document.body.style.visibility="visible";return;}
  const sb=window.supabase.createClient(url,key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
  const {data:{user},error}=await sb.auth.getUser();
  if(error||!user){location.replace("account.html");return;}
  const {data, error:roleError}=await sb.from("admin_users").select("role").eq("user_id",user.id).maybeSingle();
- if(roleError||data?.role!=="owner"||(user.email||"").toLowerCase()!==owner){gate.textContent="دسترسی مالک تأیید نشد. در حال بازگشت به صفحه حساب…";document.body.style.visibility="visible";setTimeout(()=>location.replace("account.html"),900);return;}
+ if(roleError||data?.role!=="owner"){gate.textContent="دسترسی مالک تأیید نشد. در حال بازگشت به صفحه حساب…";document.body.style.visibility="visible";setTimeout(()=>location.replace("account.html"),900);return;}
  gate.remove();content.hidden=false;document.body.style.visibility="visible";
 })();
 </script>  <script src="performance.js" defer></script>
